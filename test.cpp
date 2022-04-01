@@ -1,8 +1,8 @@
-#include "../include/header.h"
+#include "./include/header.h"
 
 int main()
 {
-    fstream f("../data/sample.txt", ios::in);
+    fstream f("./data/sample.txt", ios::in);
     if (f)
     {
         string reader;
