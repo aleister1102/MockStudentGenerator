@@ -9,8 +9,14 @@
 -
 -
 
-Ngôn ngữ sử dụng: C/C++.
-Công cụ hỗ trợ: VScode, VS, ...
+## Cấu trúc thư mục
+- data: dữ liệu
+- include: các file header
+- build: file .o và .exe
+
+## Ngôn ngữ sử dụng: C/C++.
+## Công cụ hỗ trợ: 
+VScode, Visual Studio, Git/Github.
 
 # Về chúng tôi
 - 20120356: Lê Minh Quân
