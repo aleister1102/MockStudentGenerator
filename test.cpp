@@ -1,4 +1,4 @@
-#include "./include/header.h"
+#include "include/header.h"
 
 int main()
 {
@@ -9,6 +9,10 @@ int main()
         f >> reader;
         cout << reader << "\n";
     }
+
+    int a = 1;
+    int b = 2;
+    cout << sum(a, b) <<endl;
 
     system("pause");
     return 1;

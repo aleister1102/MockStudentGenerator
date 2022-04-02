@@ -3,3 +3,5 @@
 #include <fstream>
 
 using namespace std;
+
+int sum(int, int);
