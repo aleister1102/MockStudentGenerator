@@ -14,6 +14,5 @@ int main()
     int b = 2;
     cout << sum(a, b) <<endl;
 
-    system("pause");
     return 1;
 }
