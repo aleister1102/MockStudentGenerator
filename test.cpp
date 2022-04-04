@@ -1,18 +1,15 @@
-#include "include/header.h"
+#include "include/File.h"
+#include "include/Student.h"
+#include "include/lib.h"
 
 int main()
 {
-    fstream f("./data/sample.txt", ios::in);
-    if (f)
+    File file;
+    vector<Student> studentList = file.readStudents("data/students.csv");
+    for (int i = 0; i < studentList.size(); i++)
     {
-        string reader;
-        f >> reader;
-        cout << reader << "\n";
+        cout << studentList[i].toString() << endl;
     }
-
-    int a = 1;
-    int b = 2;
-    cout << sum(a, b) <<endl;
 
     return 1;
 }
