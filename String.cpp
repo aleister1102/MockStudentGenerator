@@ -13,8 +13,8 @@ vector<string> String::parseString(string s, string del = " ")
 {
     vector<string> infos;
 
-    int start = 0;
-    int end = s.find(del);
+    size_t start = 0;
+    size_t end = s.find(del);
     while (end != -1)
     {
         infos.push_back(s.substr(start, end - start));
