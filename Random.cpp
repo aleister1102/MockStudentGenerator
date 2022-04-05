@@ -44,8 +44,10 @@ int Random::next(int ceiling)
      return num;
 }
 
-
-
+/**
+ * Reads in the first names, middle names, and last names from the data files and stores them in the
+ * appropriate member variables
+ */
 RandomFullName::RandomFullName()
 {
      File file;
@@ -55,6 +57,11 @@ RandomFullName::RandomFullName()
      _lastNames = file.readTXT("data/lastNames.txt");
 }
 
+/**
+ * Return a random FullName
+ * 
+ * @return A random FullName.
+ */
 FullName RandomFullName::next()
 {
     string firstName = _firstNames[_rng.next() % _firstNames.size()];

@@ -3,8 +3,6 @@
 #include "FullName.h"
 #include "lib.h"
 
-class Random;
-
 class Random
 {
 public:
@@ -29,5 +27,5 @@ public:
      RandomFullName();
 
 public:
-    FullName next();
+     FullName next();
 };
