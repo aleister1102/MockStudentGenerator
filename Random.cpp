@@ -1,9 +1,9 @@
-#include "RandomNumber.h"
+#include "include/Random.h"
 
 /**
  * @brief Khởi tạo hạt giống thời gian
  */
-RandomIntergerGenerator::RandomIntergerGenerator()
+Random::Random()
 {
      srand(time(NULL));
 }
@@ -13,7 +13,7 @@ RandomIntergerGenerator::RandomIntergerGenerator()
  *
  * @return Số vừa tạo
  */
-int RandomIntergerGenerator::next()
+int Random::next()
 {
      int num = rand();
      return num;
@@ -26,7 +26,7 @@ int RandomIntergerGenerator::next()
  * @param max cận trên
  * @return Số vừa tạo
  */
-int RandomIntergerGenerator::next(int min, int max)
+int Random::next(int min, int max)
 {
      int num = rand() % (max - min + 1) + min;
      return num;
@@ -38,7 +38,7 @@ int RandomIntergerGenerator::next(int min, int max)
  * @param ceiling khoảng tạo số ngẫu nhiên mong muốn
  * @return Số vừa tạo
  */
-int RandomIntergerGenerator::next(int ceiling)
+int Random::next(int ceiling)
 {
      int num = rand() % ceiling;
      return num;
