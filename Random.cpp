@@ -43,3 +43,26 @@ int Random::next(int ceiling)
      int num = rand() % ceiling;
      return num;
 }
+
+
+
+RandomFullName::RandomFullName()
+{
+     File file;
+     vector<vector<string>> firstNamesData = file.readCSV("data/firstNames.csv");
+     _firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
+     _middleNames = file.readTXT("data/middleNames.txt");
+     _lastNames = file.readTXT("data/lastNames.txt");
+}
+
+FullName RandomFullName::next()
+{
+    string firstName = _firstNames[_rng.next() % _firstNames.size()];
+    string middleName = _middleNames[_rng.next() % _middleNames.size()];
+    string lastName = _lastNames[_rng.next() % _lastNames.size()];
+    
+    FullName result(firstName, middleName, lastName);
+
+    return result;
+}
+

@@ -1,4 +1,6 @@
 #pragma once
+#include "File.h"
+#include "FullName.h"
 #include "lib.h"
 
 class Random;
@@ -14,17 +16,18 @@ public:
      int next(int);
 };
 
-class Fullname
+class RandomFullName
 {
 private:
-     string _first;
-     string _middlle;
-     string _last;
+     vector<string> _firstNames;
+     vector<float> _frequencies;
+     vector<string> _middleNames;
+     vector<string> _lastNames;
+     Random _rng;
 
 public:
-     Fullname();
-     Fullname(string, string, string);
+     RandomFullName();
 
 public:
-     string toString();
+    FullName next();
 };

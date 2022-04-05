@@ -1,36 +1,57 @@
 #include "include/File.h"
 
-/* Reading the file and creating a vector of students. */
 /**
- * Reads the students from the file and returns them in a vector
- * 
- * @param fileName the name of the file that contains the students.
- * 
- * @return A vector of students.
+ * Reads a CSV file and returns a vector of vectors of strings
+ *
+ * @param fileName the name of the file to be read
+ *
+ * @return A vector of vectors of strings.
  */
-vector<Student> File::readStudents(string fileName)
+vector<vector<string>> File::readCSV(string fileName)
 {
-    vector<Student> students;
-    Student student;
+    vector<vector<string>> parsedStrings;
+
     _input.open(fileName, ios::in);
 
     if (!_input)
     {
         cout << "File is not found!\n";
-        return students;
+        return parsedStrings;
     }
+
     string reader;
     getline(_input, reader);
+
     while (!_input.eof())
     {
         getline(_input, reader);
-
-        vector<string> parsedStrings = String::parseString(reader, ",");
-        student = student.parseStudent(parsedStrings);
-
-        students.push_back(student);
+        vector<string> parsedString = String::parseString(reader, ",");
+        parsedStrings.push_back(parsedString);
     }
 
     _input.close();
-    return students;
+    return parsedStrings;
+}
+
+vector<string> File::readTXT(string fileName)
+{
+    vector<string> strings;
+
+    _input.open(fileName, ios::in);
+
+    if (!_input)
+    {
+        cout << "File is not found!\n";
+        return strings;
+    }
+
+    string reader;
+    while (!_input.eof())
+    {
+        getline(_input, reader);
+        strings.push_back(reader);
+    }
+
+    _input.close();
+    return strings;
 }

@@ -8,6 +8,6 @@ class File
 private:
     fstream _input;
 public:
-    vector<Student> readStudents(string);
-    void writeStudents(string, vector<Student>);
+    vector<vector<string>> readCSV(string);
+    vector<string> readTXT(string);
 };
