@@ -8,22 +8,23 @@ private:
     string _name;
     float _GPA;
     string _email;
-    
+
     string _telephone;
     string _dob;
     string _address;
 
 public:
-    void setID(int id){_id = id;}
-    void setName(string name){_name = name;}
-    void setGPA(float GPA){_GPA = GPA;}
-    void setTelephone(string telephone){_telephone = telephone;}
-    void setEmail(string email){_email = email;}
-    void setDOB(string dob){_dob = dob;}
-    void setAddress(string address){_address = address;}
+    void setID(int id) { _id = id; }
+    void setName(string name) { _name = name; }
+    void setGPA(float GPA) { _GPA = GPA; }
+    void setTelephone(string telephone) { _telephone = telephone; }
+    void setEmail(string email) { _email = email; }
+    void setDOB(string dob) { _dob = dob; }
+    void setAddress(string address) { _address = address; }
 
 public:
     Student();
+
 public:
     string toString();
     Student parseStudent(vector<string>);
@@ -32,14 +33,14 @@ public:
 class Fullname
 {
 private:
-     string _first;
-     string _middlle;
-     string _last;
+    string _first;
+    string _middlle;
+    string _last;
 
 public:
-     Fullname();
-     Fullname(string, string, string);
+    Fullname();
+    Fullname(string, string, string);
 
 public:
-     string toString();
+    string toString();
 };

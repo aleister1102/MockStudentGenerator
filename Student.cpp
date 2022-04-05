@@ -46,5 +46,4 @@ Student Student::parseStudent(vector<string> attributes)
 Fullname::Fullname()
 {
     _first = "null";
-    
 }

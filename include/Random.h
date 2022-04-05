@@ -14,17 +14,17 @@ public:
      int next(int);
 };
 
-class Fullname
-{
-private:
-     string _first;
-     string _middlle;
-     string _last;
+// class Fullname
+// {
+// private:
+//      string _first;
+//      string _middlle;
+//      string _last;
 
-public:
-     Fullname();
-     Fullname(string, string, string);
+// public:
+//      Fullname();
+//      Fullname(string, string, string);
 
-public:
-     string toString();
-};
+// public:
+//      string toString();
+// };
