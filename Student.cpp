@@ -43,8 +43,21 @@ Student Student::parseStudent(vector<string> attributes)
     return result;
 }
 
-Fullname::Fullname()
+Students::Students(vector<vector<string>> collections)
 {
-    _first = "null";
-    
+    for (int i = 0; i < collections.size(); i++)
+    {
+        _students.push_back(Student::parseStudent(collections[i]));
+    }
+}
+
+string Students::toString()
+{
+    stringstream builder;
+    for (int i = 0; i < _students.size(); i++)
+    {
+        builder << _students[i].toString() << "\ns";
+    }
+
+    return builder.str();
 }
