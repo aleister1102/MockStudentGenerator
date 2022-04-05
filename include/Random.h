@@ -1,6 +1,3 @@
-#ifndef RANDOMNUMBER_H
-#define RANDOMNUMBER_H
-
 #pragma once
 #include "lib.h"
 
@@ -16,4 +13,18 @@ public:
      int next(int, int);
      int next(int);
 };
-#endif
+
+class Fullname
+{
+private:
+     string _first;
+     string _middlle;
+     string _last;
+
+public:
+     Fullname();
+     Fullname(string, string, string);
+
+public:
+     string toString();
+};

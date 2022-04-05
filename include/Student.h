@@ -7,8 +7,9 @@ private:
     int _id;
     string _name;
     float _GPA;
-    string _telephone;
     string _email;
+    
+    string _telephone;
     string _dob;
     string _address;
 
@@ -26,4 +27,19 @@ public:
 public:
     string toString();
     Student parseStudent(vector<string>);
+};
+
+class Fullname
+{
+private:
+     string _first;
+     string _middlle;
+     string _last;
+
+public:
+     Fullname();
+     Fullname(string, string, string);
+
+public:
+     string toString();
 };
