@@ -55,11 +55,11 @@ RandomFullName::RandomFullName()
 	_lastNames = file.readTXT(LASTNAMES);
 }
 
-FullName RandomFullName::next()
+FullName RandomFullName::next(Random rng)
 {
-	string firstName = _firstNameRng.next();
-	string middleName = _middleNames[_rng.next() % _middleNames.size()];
-	string lastName = _lastNames[_rng.next() % _lastNames.size()];
+	string firstName = RandomFirstName().next(rng);
+	string middleName = _middleNames[rng.next() % _middleNames.size()];
+	string lastName = _lastNames[rng.next() % _lastNames.size()];
 
 	FullName result(firstName, middleName, lastName);
 
@@ -75,9 +75,9 @@ RandomFirstName::RandomFirstName()
 	_firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
 }
 
-string RandomFirstName::next()
+string RandomFirstName::next(Random rng)
 {
-	float u = _rng.next() % 100 / 100.0;
+	float u = rng.next() % 100 / 100.0;
 	float sp = 0;
 	int result = 0;
 
@@ -108,11 +108,11 @@ RandomEmail::RandomEmail()
  *
  * @return A string.
  */
-string RandomEmail::next(FullName name)
+string RandomEmail::next(Random rng, FullName name)
 {
 	stringstream builder;
 	builder << name.First().at(0) << name.Middle().at(0) << name.Last();
-	builder << "@" << _domains[_rng.next(10)];
+	builder << "@" << _domains[rng.next(10)];
 
 	string result = String::toLowerCase(builder.str());
 	return result;
@@ -126,16 +126,16 @@ RandomTelephone::RandomTelephone()
 	_operator = file.readTXT(OPERATOR);
 }
 
-string RandomTelephone::next()
+string RandomTelephone::next(Random rng)
 {
 	stringstream builder;
 
-	int index = _rng.next(_operator.size());
+	int index = rng.next(_operator.size());
 	builder << _operator[index];
 
 	for (int i = 0; i < 7; i++)
 	{
-		int num = _rng.next(10);
+		int num = rng.next(10);
 		builder << num;
 		if (i == 0 || i == 3)
 		{
@@ -148,18 +148,18 @@ string RandomTelephone::next()
 }
 
 // ---- Day of birth ----
-Date RandomDOB::next()
+Date RandomDOB::next(Random rng)
 {
 	Date dob;
-	int year = _rng.next(1905, 2022);
-	int month = _rng.next(1, 12);
+	int year = rng.next(1905, 2022);
+	int month = rng.next(1, 12);
 
 	dob.setMonth(month);
 	dob.setYear(year);
 
 	int dayInMonth = dob.dateInMonth();
 
-	int day = _rng.next(1, dayInMonth);
+	int day = rng.next(1, dayInMonth);
 
 	dob.setDay(day);
 
@@ -181,12 +181,12 @@ RandomAddress::RandomAddress()
 	_districts = { "District 1", "District 2", "Tan Binh District", "Binh Thanh District", "Binh Tan District" };
 }
 
-string RandomAddress::randomNumber()
+string RandomAddress::randomNumber(Random rng)
 {
 	stringstream builder;
 
-	int s1 = _rng.next(1, 50);
-	int s2 = _rng.next(10, 40);
+	int s1 = rng.next(1, 50);
+	int s2 = rng.next(10, 40);
 
 	builder << s1 << "/" << s2;
 
@@ -195,47 +195,42 @@ string RandomAddress::randomNumber()
 	return result;
 }
 
-Address RandomAddress::next()
+Address RandomAddress::next(Random rng)
 {
-	int temp1 = _rng.next(_streets.size());
+	int temp1 = rng.next(_streets.size());
 	string street = _streets[temp1];
 
-	int temp2 = _rng.next(_wards.size());
+	int temp2 = rng.next(_wards.size());
 	string ward = _wards[temp2];
 
-	int temp3 = _rng.next(_districts.size());
+	int temp3 = rng.next(_districts.size());
 	string district = _districts[temp3];
 
-	string number = this->randomNumber();
+	string number = this->randomNumber(rng);
 
 	Address add(number, street, ward, district, "Ho Chi Minh city");
 
 	return add;
 }
 
-RandomStudent::RandomStudent()
-{
-}
-
 Student RandomStudent::next()
 {
 	Student result;
 
-	Random rng;
 	RandomFullName fullNameRng;
 	RandomEmail emailRng;
 	RandomTelephone telephoneRng;
 	RandomDOB dobRng;
 	RandomAddress addressRng;
 
-	result.setID(rng.next());
-	FullName name = fullNameRng.next();
+	result.setID(_rng.next());
+	FullName name = fullNameRng.next(_rng);
 	result.setName(name);
-	result.setGPA(rng.next() % 100 / 100.0);
-	result.setEmail(emailRng.next(name));
-	result.setTelephone(telephoneRng.next());
-	result.setDOB(dobRng.next());
-	result.setAddress(addressRng.next());
+	result.setGPA(_rng.next() % 100 / 100.0);
+	result.setEmail(emailRng.next(_rng, name));
+	result.setTelephone(telephoneRng.next(_rng));
+	result.setDOB(dobRng.next(_rng));
+	result.setAddress(addressRng.next(_rng));
 
 	return result;
 }

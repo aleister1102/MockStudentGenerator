@@ -18,7 +18,7 @@ string Student::toString()
 		<< "Telephone: " << _telephone << "\n"
 		<< "Email: " << _email << "\n"
 		<< "DOB: " << _dob.toString() << "\n"
-		<< "Address: " << _address.toString();
+		<< "Address: " << _address.toString() << "\n";
 
 	string result = builder.str();
 

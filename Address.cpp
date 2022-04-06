@@ -2,29 +2,29 @@
 
 Address::Address()
 {
-     _number = "";
-     _street = "";
-     _ward = "";
-     _district = "";
-     _city = "";
+	_number = "";
+	_street = "";
+	_ward = "";
+	_district = "";
+	_city = "";
 }
 
 Address::Address(string number, string street, string ward, string district, string city)
 {
-     _number = number;
-     _street = street;
-     _ward = ward;
-     _district = district;
-     _city = city;
+	_number = number;
+	_street = street;
+	_ward = ward;
+	_district = district;
+	_city = city;
 }
 
 string Address::toString()
 {
-     stringstream builder;
+	stringstream builder;
 
-     builder << "Address of student: " << _number << " " << _street << " "
-             << _ward << " " << _district << " " << _city;
+	builder << _number << ", " << _street << ", "
+		<< _ward << ", " << _district << ", " << _city;
 
-     string result = builder.str();
-     return result;
+	string result = builder.str();
+	return result;
 }

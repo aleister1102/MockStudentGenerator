@@ -29,13 +29,12 @@ class RandomFirstName
 private:
 	vector<string> _firstNames;
 	vector<float> _frequencies;
-	Random _rng;
 
 public:
 	RandomFirstName();
 
 public:
-	string next();
+	string next(Random);
 };
 
 class RandomFullName
@@ -43,27 +42,24 @@ class RandomFullName
 private:
 	vector<string> _middleNames;
 	vector<string> _lastNames;
-	Random _rng;
-	RandomFirstName _firstNameRng;
 
 public:
 	RandomFullName();
 
 public:
-	FullName next();
+	FullName next(Random);
 };
 
 class RandomEmail
 {
 private:
 	vector<string> _domains;
-	Random _rng;
 
 public:
 	RandomEmail();
 
 public:
-	string next(FullName);
+	string next(Random, FullName);
 };
 
 class RandomTelephone
@@ -71,22 +67,17 @@ class RandomTelephone
 private:
 	vector<string> _operator;
 
-	Random _rng;
-
 public:
 	RandomTelephone();
 
 public:
-	string next();
+	string next(Random);
 };
 
 class RandomDOB
 {
-private:
-	Random _rng;
-
 public:
-	Date next();
+	Date next(Random);
 };
 
 class RandomAddress
@@ -98,20 +89,18 @@ private:
 	vector<string> _districts;
 	vector<string> _citys;
 
-	Random _rng;
-
 public:
 	RandomAddress();
 
 public:
-	string randomNumber();
-	Address next();
+	string randomNumber(Random);
+	Address next(Random);
 };
 
 class RandomStudent
 {
-public:
-	RandomStudent();
+private:
+	Random _rng;
 public:
 	Student next();
 };
