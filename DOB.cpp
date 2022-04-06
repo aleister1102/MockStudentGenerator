@@ -84,3 +84,16 @@ bool Date::isDate()
 
 	return true;
 }
+
+Date Date::parseDOB(string str)
+{
+	vector<string> date = String::parseString(str);
+
+	Date result;
+
+	result.setDay(stoi(date[0]));
+	result.setMonth(stoi(date[1]));
+	result.setYear(stoi(date[2]));
+
+	return result;
+}

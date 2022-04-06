@@ -126,6 +126,12 @@ RandomTelephone::RandomTelephone()
 	_operator = file.readTXT(OPERATOR);
 }
 
+/**
+ * @brief Generate a random telephone from given operator
+ *
+ * @param rng Seed time
+ * @return A string
+ */
 string RandomTelephone::next(Random rng)
 {
 	stringstream builder;
@@ -147,7 +153,12 @@ string RandomTelephone::next(Random rng)
 	return result;
 }
 
-// ---- Day of birth ----
+/**
+ * @brief Generate a random day of birth
+ *
+ * @param rng Seed time
+ * @return Date data type
+ */
 Date RandomDOB::next(Random rng)
 {
 	Date dob;
@@ -169,18 +180,19 @@ Date RandomDOB::next(Random rng)
 // ---- Adress ----
 RandomAddress::RandomAddress()
 {
-	_streets = { "Binh Hung Hoa", "Nam Ky Khoi Nghia", "Nguyen Van Cu", "Ton Duc Thang",
-				"Pham Ngoc Thach" };
-	_wards = {
-		"Ward 2",
-		"Ward 3",
-		"Son Ky Ward",
-		"Tan Son Nhi Ward",
-		"Da Kao Ward" };
-
-	_districts = { "District 1", "District 2", "Tan Binh District", "Binh Thanh District", "Binh Tan District" };
+	File file;
+	_streets = file.readTXT(STREETS);
+	_wards = file.readTXT(WARDS);
+	_districts = {"District 01", "District 02 - Thu Duc City", "Tan Binh District",
+			    "Binh Thanh District", "Binh Tan District"};
 }
 
+/**
+ * @brief Generate a random address number
+ *
+ * @param rng Seed time
+ * @return A string
+ */
 string RandomAddress::randomNumber(Random rng)
 {
 	stringstream builder;
@@ -195,6 +207,12 @@ string RandomAddress::randomNumber(Random rng)
 	return result;
 }
 
+/**
+ * @brief Generate a random address
+ *
+ * @param rng Seed time
+ * @return Address data type
+ */
 Address RandomAddress::next(Random rng)
 {
 	int temp1 = rng.next(_streets.size());

@@ -1,5 +1,6 @@
 #pragma once
 #include "lib.h"
+#include "String.h"
 
 class Date
 {
@@ -20,6 +21,8 @@ public:
      void setDay(int value) { _day = value; }
      void setMonth(int value) { _month = value; }
      void setYear(int value) { _year = value; }
+
+     Date parseDOB(string);
 
      string toString();
 };
