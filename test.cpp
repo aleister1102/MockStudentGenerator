@@ -19,14 +19,16 @@ int main()
 #endif
 
     RandomFullName fullNameRng;
+    RandomAddress addressRng;
+    RandomEmail emailRng;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 10; i++)
     {
-        cout << fullNameRng.next().toString() << endl;
+        FullName name = fullNameRng.next();
+        cout << name.toString() << endl;
+        cout << addressRng.next().toString() << endl;
+        cout << emailRng.next(name) << endl;
     }
 
-    RandomAddress addressRng;
-    Address add = addressRng.next();
-    cout << add.toString() << endl;
     return 0;
 }

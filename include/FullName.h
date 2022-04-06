@@ -7,7 +7,10 @@ private:
     string _first;
     string _middle;
     string _last;
-
+public:
+    string First() { return _first; }
+    string Middle() { return _middle; }
+    string Last() { return _last; }
 public:
     FullName();
     FullName(string, string, string);

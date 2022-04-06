@@ -25,3 +25,15 @@ vector<string> String::parseString(string s, string del = " ")
 
     return infos;
 }
+
+string String::toLowerCase(string str)
+{
+    string builder;
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        builder += (char) tolower(str.at(i));
+    }
+
+    return builder;
+}

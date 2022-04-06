@@ -23,7 +23,7 @@ string Address::toString()
      stringstream builder;
 
      builder << "Address of student: " << _number << " " << _street << " "
-             << _ward << " " << _district << " " << _city << "\n";
+             << _ward << " " << _district << " " << _city;
 
      string result = builder.str();
      return result;
