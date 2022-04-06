@@ -2,24 +2,24 @@
 
 FullName::FullName()
 {
-    _first = "NULL";
-    _middle = "NULL";
-    _last = "NULL";
+	_first = "NULL";
+	_middle = "NULL";
+	_last = "NULL";
 }
 
 FullName::FullName(string first, string middle, string last)
 {
-    _first = first;
-    _middle = middle;
-    _last = last;
+	_first = first;
+	_middle = middle;
+	_last = last;
 }
 
 string FullName::toString()
 {
-    stringstream builder;
+	stringstream builder;
 
-    builder << _first << " " << _middle << " " << _last;
-    return builder.str();
+	builder << _first << " " << _middle << " " << _last;
+	return builder.str();
 }
 
 /**
@@ -31,15 +31,28 @@ string FullName::toString()
  *
  * @return The vector of names.
  */
-vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vector<float> &frequencies)
+vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vector<float>& frequencies)
 {
-    vector<string> names;
+	vector<string> names;
 
-    for (int i = 0; i < collections.size(); i++)
-    {
-        names.push_back(collections[i][0]);
-        frequencies.push_back(stof(collections[i][1]));
-    }
+	for (int i = 0; i < collections.size(); i++)
+	{
+		names.push_back(collections[i][0]);
+		frequencies.push_back(stof(collections[i][1]));
+	}
 
-    return names;
+	return names;
+}
+
+FullName FullName::parseFullName(string str)
+{
+	vector<string> names = String::parseString(str);
+
+	FullName result;
+
+	result.setFirst(names[0]);
+	result.setMiddle(names[1]);
+	result.setLast(names[2]);
+
+	return result;
 }

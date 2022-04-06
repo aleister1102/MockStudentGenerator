@@ -8,99 +8,110 @@
 class Random;
 class RandomFirstName;
 class RandomFullName;
+class RandomEmail;
+class RandomTelephone;
 class RandomDOB;
 class RanmdomAddress;
-class RandomEmail;
 
 class Random
 {
 public:
-     Random();
+	Random();
 
 public:
-     int next();
-     int next(int, int);
-     int next(int);
+	int next();
+	int next(int, int);
+	int next(int);
 };
 
 class RandomFirstName
 {
 private:
-     vector<string> _firstNames;
-     vector<float> _frequencies;
-     Random _rng;
+	vector<string> _firstNames;
+	vector<float> _frequencies;
+	Random _rng;
 
 public:
-     RandomFirstName();
+	RandomFirstName();
 
 public:
-     string next();
+	string next();
 };
+
 class RandomFullName
 {
 private:
-     vector<string> _middleNames;
-     vector<string> _lastNames;
-     Random _rng;
-     RandomFirstName _firstNameRng;
+	vector<string> _middleNames;
+	vector<string> _lastNames;
+	Random _rng;
+	RandomFirstName _firstNameRng;
 
 public:
-     RandomFullName();
+	RandomFullName();
 
 public:
-     FullName next();
+	FullName next();
 };
 
 class RandomEmail
 {
 private:
-     vector<string> _domains;
-     Random _rng;
+	vector<string> _domains;
+	Random _rng;
 
 public:
-     RandomEmail();
+	RandomEmail();
 
 public:
-     string next(FullName);
+	string next(FullName);
 };
 
 class RandomTelephone
 {
 private:
-     vector<string> _operator;
+	vector<string> _operator;
 
-     Random _rng;
-
-public:
-     RandomTelephone();
+	Random _rng;
 
 public:
-     string next();
+	RandomTelephone();
+
+public:
+	string next();
 };
 
 class RandomDOB
 {
 private:
-     Random _rng;
+	Random _rng;
 
 public:
-     Date next();
+	Date next();
 };
+
 class RandomAddress
 {
 private:
-     vector<string> _numbers;
-     vector<string> _streets;
-     vector<string> _wards;
-     vector<string> _districts;
-     vector<string> _citys;
+	vector<string> _numbers;
+	vector<string> _streets;
+	vector<string> _wards;
+	vector<string> _districts;
+	vector<string> _citys;
 
-     Random _rng;
-
-public:
-     RandomAddress();
+	Random _rng;
 
 public:
-     string randomNumber();
-     Address next();
+	RandomAddress();
+
+public:
+	string randomNumber();
+	Address next();
+};
+
+class RandomStudent
+{
+public:
+	RandomStudent();
+public:
+	Student next();
 };

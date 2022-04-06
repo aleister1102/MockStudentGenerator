@@ -4,6 +4,6 @@
 class String
 {
 public:
-    static vector<string> parseString(string, string);
-    static string toLowerCase(string);
+	static vector<string> parseString(string, string del = " ");
+	static string toLowerCase(string);
 };

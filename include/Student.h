@@ -1,43 +1,46 @@
 #pragma once
 #include "lib.h"
+#include "FullName.h"
+#include "DOB.h"
+#include "Address.h"
 
 class Student
 {
 private:
-    int _id;
-    string _name;
-    float _GPA;
-    string _email;
+	int _id;
+	FullName _name;
+	float _GPA;
+	string _email;
 
-    string _telephone;
-    string _dob;
-    string _address;
-
-public:
-    void setID(int id) { _id = id; }
-    void setName(string name) { _name = name; }
-    void setGPA(float GPA) { _GPA = GPA; }
-    void setTelephone(string telephone) { _telephone = telephone; }
-    void setEmail(string email) { _email = email; }
-    void setDOB(string dob) { _dob = dob; }
-    void setAddress(string address) { _address = address; }
+	string _telephone;
+	Date _dob;
+	Address _address;
 
 public:
-    Student();
+	void setID(int id) { _id = id; }
+	void setName(FullName name) { _name = name; }
+	void setGPA(float GPA) { _GPA = GPA; }
+	void setTelephone(string telephone) { _telephone = telephone; }
+	void setEmail(string email) { _email = email; }
+	void setDOB(Date dob) { _dob = dob; }
+	void setAddress(Address address) { _address = address; }
 
 public:
-    string toString();
-    static Student parseStudent(vector<string>);
+	Student();
+
+public:
+	string toString();
+	static Student parseStudent(vector<string>);
 };
 
 class Students
 {
 private:
-    vector<Student> _students;
+	vector<Student> _students;
 
 public:
-    Students(vector<vector<string>>);
+	Students(vector<vector<string>>);
 
 public:
-    string toString();
+	string toString();
 };

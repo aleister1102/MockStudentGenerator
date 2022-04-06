@@ -7,32 +7,38 @@
 
 int main()
 {
-    File file;
+	File file;
 #if 0
-    vector<vector<string>> parsedStrings = file.readCSV("data/students.csv");
+	vector<vector<string>> parsedStrings = file.readCSV("data/students.csv");
 
-    Students students(parsedStrings);
-    cout << students.toString() << endl;
+	Students students(parsedStrings);
+	cout << students.toString() << endl;
 
-    FullName name("Le", "Minh", "Quan");
-    cout << name.toString() << endl;
+	FullName name("Le", "Minh", "Quan");
+	cout << name.toString() << endl;
 #endif
 #if 0
-    RandomFullName fullNameRng;
-    RandomAddress addressRng;
-    RandomEmail emailRng;
+	RandomFullName fullNameRng;
+	RandomAddress addressRng;
+	RandomEmail emailRng;
+	RandomTelephone tele;
 
-    for (int i = 0; i < 10; i++)
-    {
-        FullName name = fullNameRng.next();
-        cout << name.toString() << endl;
-        cout << addressRng.next().toString() << endl;
-        cout << emailRng.next(name) << endl;
-    }
+	for (int i = 0; i < 10; i++)
+	{
+		FullName name = fullNameRng.next();
+		cout << name.toString() << endl;
+		cout << addressRng.next().toString() << endl;
+		cout << emailRng.next(name) << endl;
+		cout << tele.next() << endl;
+	}
 #endif
+	RandomStudent studentRng;
 
-    RandomTelephone tele;
-    string telephonNumber = tele.next();
-    cout << telephonNumber << endl;
-    return 0;
+	for (int i = 0; i < 100; i++)
+	{
+		Student randomStudent = studentRng.next();
+		cout << randomStudent.toString() << "\n";
+	}
+
+	return 0;
 }
