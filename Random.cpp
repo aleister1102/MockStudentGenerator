@@ -1,6 +1,6 @@
 #include "include/Random.h"
-#include "include/DOB.h"
 #include "include/Address.h"
+#include "include/DOB.h"
 
 /**
  * @brief Khởi tạo hạt giống thời gian
@@ -46,11 +46,6 @@ int Random::next(int ceiling)
      return num;
 }
 
-
-/**
- * Reads in the first names, middle names, and last names from the data files and stores them in the
- * appropriate member variables
- */
 RandomFullName::RandomFullName()
 {
      File file;
@@ -58,48 +53,44 @@ RandomFullName::RandomFullName()
      _lastNames = file.readTXT(LASTNAMES);
 }
 
-/**
- * Return a random FullName
- * 
- * @return A random FullName.
- */
-FullName RandomFullName::next(Random rng)
+FullName RandomFullName::next()
 {
-    string firstName = RandomFirstName().next(rng);
-    string middleName = _middleNames[rng.next() % _middleNames.size()];
-    string lastName = _lastNames[rng.next() % _lastNames.size()];
-    
-    FullName result(firstName, middleName, lastName);
+     string firstName = _firstNameRng.next();
+     string middleName = _middleNames[_rng.next() % _middleNames.size()];
+     string lastName = _lastNames[_rng.next() % _lastNames.size()];
 
-    return result;
+     FullName result(firstName, middleName, lastName);
+
+     return result;
 }
 
 RandomFirstName::RandomFirstName()
 {
-    File file;
+     File file;
 
-    vector<vector<string>> firstNamesData = file.readCSV(FIRSTNAMES);
-    _firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
+     vector<vector<string>> firstNamesData = file.readCSV(FIRSTNAMES);
+     _firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
 }
 
-string RandomFirstName::next(Random rng)
+string RandomFirstName::next()
 {
-    float u = rng.next() % 100 / 100.0;
-    float sp = 0;
-    int result = 0;
+     float u = _rng.next() % 100 / 100.0;
+     float sp = 0;
+     int result = 0;
 
-    for (int i = 0; i < _frequencies.size(); i++)
-    {
-        sp += _frequencies[i]/100;
-        if (sp >= u)
-        {
-            result = i;
-            break;
-        }
-    }
+     for (int i = 0; i < _frequencies.size(); i++)
+     {
+          sp += _frequencies[i] / 100;
+          if (sp >= u)
+          {
+               result = i;
+               break;
+          }
+     }
 
-    return _firstNames[result];
+     return _firstNames[result];
 }
+
 string RandomTelephone()
 {
      Random rng;
@@ -136,20 +127,6 @@ Date RandomDOB::next()
      return dob;
 }
 
-string RandomAddress::randomNumber()
-{
-     stringstream builder;
-
-     int s1 = _rng.next(1, 50);
-     int s2 = _rng.next(10, 40);
-
-     builder << s1 << "/" << s2;
-
-     string result = builder.str();
-
-     return result;
-}
-
 RandomAddress::RandomAddress()
 {
      _streets = {"Binh Hung Hoa", "Nam Ky Khoi Nghia", "Nguyen Van Cu", "Ton Duc Thang",
@@ -162,6 +139,20 @@ RandomAddress::RandomAddress()
          "Da Kao Ward"};
 
      _districts = {"District 1", "District 2", "Tan Binh District", "Binh Thanh District", "Binh Tan District"};
+}
+
+string RandomAddress::randomNumber()
+{
+     stringstream builder;
+
+     int s1 = _rng.next(1, 50);
+     int s2 = _rng.next(10, 40);
+
+     builder << s1 << "/" << s2;
+
+     string result = builder.str();
+
+     return result;
 }
 
 Address RandomAddress::next()

@@ -18,12 +18,11 @@ int main()
     cout << name.toString() << endl;
 #endif
 
-    Random rng;
     RandomFullName fullNameRng;
 
     for (int i = 0; i < 100; i++)
     {
-        cout << fullNameRng.next(rng).toString() << endl;
+        cout << fullNameRng.next().toString() << endl;
     }
 
     RandomAddress addressRng;

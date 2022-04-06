@@ -35,9 +35,9 @@ vector<vector<string>> File::readCSV(string fileName)
 
 /**
  * Reads a text file and returns a vector of strings
- * 
+ *
  * @param fileName the name of the file to be read.
- * 
+ *
  * @return A vector of strings.
  */
 vector<string> File::readTXT(string fileName)

@@ -25,10 +25,10 @@ string FullName::toString()
 /**
  * Given a vector of vectors of strings, parse the first string of each vector and return a vector of
  * strings
- * 
+ *
  * @param collections A vector of vectors of strings. Each vector of strings is a collection of names.
  * @param frequencies A vector of floats that contains the frequencies of each name.
- * 
+ *
  * @return The vector of names.
  */
 vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vector<float> &frequencies)
