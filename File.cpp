@@ -56,6 +56,8 @@ vector<string> File::readTXT(string fileName)
     while (!_input.eof())
     {
         getline(_input, reader);
+        if (reader == "")
+            break;
         strings.push_back(reader);
     }
 

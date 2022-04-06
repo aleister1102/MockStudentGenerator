@@ -1,6 +1,7 @@
 #include "include/Random.h"
 #include "include/Address.h"
 #include "include/DOB.h"
+#include "include/File.h"
 
 /**
  * @brief Khởi tạo hạt giống thời gian
@@ -96,42 +97,52 @@ string RandomFirstName::next()
 // ---- Email ----
 RandomEmail::RandomEmail()
 {
-    File file;
-    _domains = file.readTXT(DOMAINS);
+     File file;
+     _domains = file.readTXT(DOMAINS);
 }
 
 /**
  * Generate a random email address for a given name
- * 
+ *
  * @param name The full name of the person.
- * 
+ *
  * @return A string.
  */
 string RandomEmail::next(FullName name)
 {
-    stringstream builder;
-    builder << name.First().at(0) << name.Middle().at(0) << name.Last();
-    builder << "@" << _domains[_rng.next(10)];
-    
-    string result = String::toLowerCase(builder.str());
-    return result;
+     stringstream builder;
+     builder << name.First().at(0) << name.Middle().at(0) << name.Last();
+     builder << "@" << _domains[_rng.next(10)];
+
+     string result = String::toLowerCase(builder.str());
+     return result;
 }
 
 // ---- Telephone ----
-string RandomTelephone()
+RandomTelephone::RandomTelephone()
 {
-     Random rng;
+     File file;
+
+     _operator = file.readTXT(OPERATOR);
+}
+
+string RandomTelephone::next()
+{
      stringstream builder;
-     builder << "09";
+
+     int index = _rng.next(_operator.size());
+     builder << _operator[index];
+
      for (int i = 0; i < 7; i++)
      {
-          int x = rng.next(10);
-          builder << x;
-          if (i == 1 || i == 4)
+          int num = _rng.next(10);
+          builder << num;
+          if (i == 0 || i == 3)
           {
                builder << "-";
           }
      }
+
      string result = builder.str();
      return result;
 }

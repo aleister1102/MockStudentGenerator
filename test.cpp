@@ -17,7 +17,7 @@ int main()
     FullName name("Le", "Minh", "Quan");
     cout << name.toString() << endl;
 #endif
-
+#if 0
     RandomFullName fullNameRng;
     RandomAddress addressRng;
     RandomEmail emailRng;
@@ -29,6 +29,10 @@ int main()
         cout << addressRng.next().toString() << endl;
         cout << emailRng.next(name) << endl;
     }
+#endif
 
+    RandomTelephone tele;
+    string telephonNumber = tele.next();
+    cout << telephonNumber << endl;
     return 0;
 }

@@ -54,15 +54,30 @@ public:
 class RandomEmail
 {
 private:
-    vector<string> _domains;
-    Random _rng;
+     vector<string> _domains;
+     Random _rng;
+
 public:
-    RandomEmail();
+     RandomEmail();
+
 public:
-    string next(FullName);
+     string next(FullName);
 };
 
-string RandomTelephone();
+class RandomTelephone
+{
+private:
+     vector<string> _operator;
+
+     Random _rng;
+
+public:
+     RandomTelephone();
+
+public:
+     string next();
+};
+
 class RandomDOB
 {
 private:
