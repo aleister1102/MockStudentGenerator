@@ -46,6 +46,7 @@ int Random::next(int ceiling)
      return num;
 }
 
+// ---- Full name ----
 RandomFullName::RandomFullName()
 {
      File file;
@@ -64,6 +65,7 @@ FullName RandomFullName::next()
      return result;
 }
 
+// ---- First name ----
 RandomFirstName::RandomFirstName()
 {
      File file;
@@ -91,6 +93,7 @@ string RandomFirstName::next()
      return _firstNames[result];
 }
 
+// ---- Telephone ----
 string RandomTelephone()
 {
      Random rng;
@@ -109,6 +112,7 @@ string RandomTelephone()
      return result;
 }
 
+// ---- Day of birth ----
 Date RandomDOB::next()
 {
      Date dob;
@@ -127,6 +131,7 @@ Date RandomDOB::next()
      return dob;
 }
 
+// ---- Adress ----
 RandomAddress::RandomAddress()
 {
      _streets = {"Binh Hung Hoa", "Nam Ky Khoi Nghia", "Nguyen Van Cu", "Ton Duc Thang",
