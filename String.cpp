@@ -9,7 +9,7 @@
  *
  * @return A vector of strings.
  */
-vector<string> String::parseString(string s, string del)
+vector<string> String::split(string s, string del)
 {
 	vector<string> infos;
 

@@ -9,28 +9,28 @@
  */
 vector<vector<string>> File::readCSV(string fileName)
 {
-    vector<vector<string>> parsedStrings;
+	vector<vector<string>> parsedStrings;
 
-    _input.open(fileName, ios::in);
+	_input.open(fileName, ios::in);
 
-    if (!_input)
-    {
-        cout << "File is not found!\n";
-        return parsedStrings;
-    }
+	if (!_input)
+	{
+		cout << "File is not found!\n";
+		return parsedStrings;
+	}
 
-    string reader;
-    getline(_input, reader);
+	string reader;
+	getline(_input, reader);
 
-    while (!_input.eof())
-    {
-        getline(_input, reader);
-        vector<string> parsedString = String::parseString(reader, ",");
-        parsedStrings.push_back(parsedString);
-    }
+	while (!_input.eof())
+	{
+		getline(_input, reader);
+		vector<string> parsedString = String::split(reader, ",");
+		parsedStrings.push_back(parsedString);
+	}
 
-    _input.close();
-    return parsedStrings;
+	_input.close();
+	return parsedStrings;
 }
 
 /**
@@ -42,25 +42,25 @@ vector<vector<string>> File::readCSV(string fileName)
  */
 vector<string> File::readTXT(string fileName)
 {
-    vector<string> strings;
+	vector<string> strings;
 
-    _input.open(fileName, ios::in);
+	_input.open(fileName, ios::in);
 
-    if (!_input)
-    {
-        cout << "File is not found!\n";
-        return strings;
-    }
+	if (!_input)
+	{
+		cout << "File is not found!\n";
+		return strings;
+	}
 
-    string reader;
-    while (!_input.eof())
-    {
-        getline(_input, reader);
-        if (reader == "")
-            break;
-        strings.push_back(reader);
-    }
+	string reader;
+	while (!_input.eof())
+	{
+		getline(_input, reader);
+		if (reader == "")
+			break;
+		strings.push_back(reader);
+	}
 
-    _input.close();
-    return strings;
+	_input.close();
+	return strings;
 }

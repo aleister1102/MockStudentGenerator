@@ -46,7 +46,7 @@ vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vec
 
 FullName FullName::parseFullName(string str)
 {
-	vector<string> names = String::parseString(str);
+	vector<string> names = String::split(str);
 
 	FullName result;
 

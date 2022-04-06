@@ -183,8 +183,8 @@ RandomAddress::RandomAddress()
 	File file;
 	_streets = file.readTXT(STREETS);
 	_wards = file.readTXT(WARDS);
-	_districts = {"District 01", "District 02 - Thu Duc City", "Tan Binh District",
-			    "Binh Thanh District", "Binh Tan District"};
+	_districts = { "District 01", "District 02 - Thu Duc City", "Tan Binh District",
+				"Binh Thanh District", "Binh Tan District" };
 }
 
 /**
@@ -244,7 +244,7 @@ Student RandomStudent::next()
 	result.setID(_rng.next());
 	FullName name = fullNameRng.next(_rng);
 	result.setName(name);
-	result.setGPA(_rng.next() % 100 / 100.0);
+	result.setGPA(_rng.next() % 100 / 10.0);
 	result.setEmail(emailRng.next(_rng, name));
 	result.setTelephone(telephoneRng.next(_rng));
 	result.setDOB(dobRng.next(_rng));
