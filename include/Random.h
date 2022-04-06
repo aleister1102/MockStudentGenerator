@@ -6,10 +6,11 @@
 #include "lib.h"
 
 class Random;
-class RandomFullName;
 class RandomFirstName;
+class RandomFullName;
 class RandomDOB;
 class RanmdomAddress;
+class RandomEmail;
 
 class Random
 {
@@ -48,6 +49,17 @@ public:
 
 public:
      FullName next();
+};
+
+class RandomEmail
+{
+private:
+    vector<string> _domains;
+    Random _rng;
+public:
+    RandomEmail();
+public:
+    string next(FullName);
 };
 
 string RandomTelephone();

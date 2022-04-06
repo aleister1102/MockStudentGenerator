@@ -5,4 +5,5 @@ class String
 {
 public:
     static vector<string> parseString(string, string);
+    static string toLowerCase(string);
 };

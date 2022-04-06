@@ -93,6 +93,30 @@ string RandomFirstName::next()
      return _firstNames[result];
 }
 
+// ---- Email ----
+RandomEmail::RandomEmail()
+{
+    File file;
+    _domains = file.readTXT(DOMAINS);
+}
+
+/**
+ * Generate a random email address for a given name
+ * 
+ * @param name The full name of the person.
+ * 
+ * @return A string.
+ */
+string RandomEmail::next(FullName name)
+{
+    stringstream builder;
+    builder << name.First().at(0) << name.Middle().at(0) << name.Last();
+    builder << "@" << _domains[_rng.next(10)];
+    
+    string result = String::toLowerCase(builder.str());
+    return result;
+}
+
 // ---- Telephone ----
 string RandomTelephone()
 {
