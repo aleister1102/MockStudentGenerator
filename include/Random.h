@@ -17,15 +17,22 @@ public:
 class RandomFullName
 {
 private:
-     vector<string> _firstNames;
-     vector<float> _frequencies;
      vector<string> _middleNames;
      vector<string> _lastNames;
-     Random _rng;
-
 public:
      RandomFullName();
 
 public:
-     FullName next();
+     FullName next(Random);
+};
+
+class RandomFirstName
+{
+private:
+    vector<string> _firstNames;
+    vector<float> _frequencies;
+public:
+    RandomFirstName();
+public:
+    string next(Random rng);
 };

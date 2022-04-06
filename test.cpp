@@ -17,12 +17,12 @@ int main()
     cout << name.toString() << endl;
 #endif
 
-    RandomFullName generator;
-
+    Random rng;
+    RandomFullName fullNameRng;
+  
     for (int i = 0; i < 100; i++)
     {
-        string s = generator.next().toString();
-        cout << s << endl;
+        cout << fullNameRng.next(rng).toString() << endl;
     }
 
     return 0;

@@ -44,6 +44,7 @@ int Random::next(int ceiling)
      return num;
 }
 
+
 /**
  * Reads in the first names, middle names, and last names from the data files and stores them in the
  * appropriate member variables
@@ -51,10 +52,8 @@ int Random::next(int ceiling)
 RandomFullName::RandomFullName()
 {
      File file;
-     vector<vector<string>> firstNamesData = file.readCSV("data/firstNames.csv");
-     _firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
-     _middleNames = file.readTXT("data/middleNames.txt");
-     _lastNames = file.readTXT("data/lastNames.txt");
+     _middleNames = file.readTXT(MIDDLENAMES);
+     _lastNames = file.readTXT(LASTNAMES);
 }
 
 /**
@@ -62,14 +61,40 @@ RandomFullName::RandomFullName()
  * 
  * @return A random FullName.
  */
-FullName RandomFullName::next()
+FullName RandomFullName::next(Random rng)
 {
-    string firstName = _firstNames[_rng.next() % _firstNames.size()];
-    string middleName = _middleNames[_rng.next() % _middleNames.size()];
-    string lastName = _lastNames[_rng.next() % _lastNames.size()];
+    string firstName = RandomFirstName().next(rng);
+    string middleName = _middleNames[rng.next() % _middleNames.size()];
+    string lastName = _lastNames[rng.next() % _lastNames.size()];
     
     FullName result(firstName, middleName, lastName);
 
     return result;
 }
 
+RandomFirstName::RandomFirstName()
+{
+    File file;
+
+    vector<vector<string>> firstNamesData = file.readCSV(FIRSTNAMES);
+    _firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
+}
+
+string RandomFirstName::next(Random rng)
+{
+    float u = rng.next() % 100 / 100.0;
+    float sp = 0;
+    int result = 0;
+
+    for (int i = 0; i < _frequencies.size(); i++)
+    {
+        sp += _frequencies[i]/100;
+        if (sp >= u)
+        {
+            result = i;
+            break;
+        }
+    }
+
+    return _firstNames[result];
+}
