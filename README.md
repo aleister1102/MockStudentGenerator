@@ -9,6 +9,12 @@
 -
 -
 
+## Quy tắc commit
+- feat: thêm tính năng mới
+- fix: update hoặc sửa code
+- chore: làm mấy thứ lặt vặt bên ngoài như đổi tên file, sửa data, ...
+- refactor: làm gọn code nhưng ko ảnh hưởng đến logic của code
+
 ## Cấu trúc thư mục
 - data: dữ liệu
 - include: các file header
