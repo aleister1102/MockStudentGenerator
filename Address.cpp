@@ -23,8 +23,23 @@ string Address::toString()
 	stringstream builder;
 
 	builder << _number << ", " << _street << ", "
-		<< _ward << ", " << _district << ", " << _city;
+		   << _ward << ", " << _district << ", " << _city;
 
 	string result = builder.str();
+	return result;
+}
+
+Address Address::parseAddress(string str)
+{
+	vector<string> address = String::parseString(str);
+
+	Address result;
+
+	result.setNumber(address[0]);
+	result.setStreet(address[1]);
+	result.setWard(address[2]);
+	result.setDistrict(address[3]);
+	result.setCity(address[4]);
+
 	return result;
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "lib.h"
+#include "String.h"
 
 class Address
 {
@@ -15,5 +16,13 @@ public:
      Address(string, string, string, string, string);
 
 public:
+     void setNumber(string value) { _number = value; }
+     void setStreet(string value) { _street = value; }
+     void setWard(string value) { _ward = value; }
+     void setDistrict(string value) { _district = value; }
+     void setCity(string value) { _city = value; }
+
+     Address parseAddress(string str);
+
      string toString();
 };

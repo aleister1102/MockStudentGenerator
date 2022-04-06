@@ -15,3 +15,5 @@ using namespace std;
 #define STUDENTS "data/students.csv"
 #define DOMAINS "data/domains.txt"
 #define OPERATOR "data/operators.txt"
+#define WARDS "data/wards.txt"
+#define STREETS "data/streets.txt"
