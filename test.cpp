@@ -2,9 +2,7 @@
 #include "include/File.h"
 #include "include/Random.h"
 #include "include/Student.h"
-#include "include/RandomTelephone.h"
-#include "include/RandomDOB.h"
-#include "include/RandomAddress.h"
+#include "include/Address.h"
 
 int main()
 {
