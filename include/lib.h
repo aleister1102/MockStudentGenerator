@@ -1,5 +1,4 @@
 #pragma once
-#include <codecvt>
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -7,6 +6,9 @@
 #include <string>
 #include <vector>
 #include <cctype>
+#include <Windows.h>
+#include <io.h>
+#include <fcntl.h>
 using namespace std;
 
 #define FIRSTNAMES "data/firstNames.csv"
