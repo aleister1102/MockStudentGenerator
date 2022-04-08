@@ -40,7 +40,9 @@ private:
 
 public:
 	Students(vector<vector<string>>);
+	Students(vector<Student>);
 
 public:
 	string toString();
+	float calcAvgGPA();
 };

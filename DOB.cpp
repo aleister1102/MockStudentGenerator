@@ -85,7 +85,7 @@ bool Date::isDate()
 	return true;
 }
 
-Date Date::parseDOB(string str)
+Date Date::parseDate(string str)
 {
 	vector<string> date = String::split(str);
 

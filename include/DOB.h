@@ -22,7 +22,7 @@ public:
      void setMonth(int value) { _month = value; }
      void setYear(int value) { _year = value; }
 
-     Date parseDOB(string);
+     static Date parseDate(string);
 
      string toString();
 };

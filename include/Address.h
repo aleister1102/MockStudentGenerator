@@ -22,7 +22,7 @@ public:
      void setDistrict(string value) { _district = value; }
      void setCity(string value) { _city = value; }
 
-     Address parseAddress(string str);
+     static Address parseAddress(string str);
 
      string toString();
 };

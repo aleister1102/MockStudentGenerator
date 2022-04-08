@@ -22,5 +22,5 @@ public:
 public:
 	string toString();
 	static vector<string> parseFirstNames(vector<vector<string>>, vector<float>&);
-	FullName parseFullName(string);
+	static FullName parseFullName(string);
 };

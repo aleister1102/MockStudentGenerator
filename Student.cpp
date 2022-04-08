@@ -29,13 +29,13 @@ Student Student::parseStudent(vector<string> attributes)
 {
 	Student result;
 
-	//result.setID(stoi(attributes[0]));
-	//result.setName(attributes[1]);
-	//result.setGPA(stof(attributes[2]));
-	//result.setTelephone(attributes[3]);
-	//result.setEmail(attributes[4]);
-	//result.setDOB(attributes[5]);
-	//result.setAddress(attributes[6]);
+	result.setID(stoi(attributes[0]));
+	result.setName(FullName::parseFullName(attributes[1]));
+	result.setGPA(stof(attributes[2]));
+	result.setTelephone(attributes[3]);
+	result.setEmail(attributes[4]);
+	result.setDOB(Date::parseDate(attributes[5]));
+	result.setAddress(Address::parseAddress(attributes[6]));
 
 	return result;
 }
@@ -57,4 +57,9 @@ string Students::toString()
 	}
 
 	return builder.str();
+}
+
+float Students::calcAvgGPA()
+{
+
 }
