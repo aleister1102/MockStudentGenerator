@@ -50,6 +50,11 @@ public:
 	FullName next(Random);
 };
 
+class RandomGPA {
+public:
+	float next(Random);
+};
+
 class RandomEmail
 {
 private:
@@ -99,8 +104,15 @@ public:
 
 class RandomStudent
 {
-private:
+public:
+	Student next(Random);
+};
+
+
+class RandomStudents
+{
+private: 
 	Random _rng;
 public:
-	Student next();
+	vector<Student> next();
 };

@@ -47,25 +47,6 @@ int Random::next(int ceiling)
 	return num;
 }
 
-// ---- Full name ----
-RandomFullName::RandomFullName()
-{
-	File file;
-	_middleNames = file.readTXT(MIDDLENAMES);
-	_lastNames = file.readTXT(LASTNAMES);
-}
-
-FullName RandomFullName::next(Random rng)
-{
-	string firstName = RandomFirstName().next(rng);
-	string middleName = _middleNames[rng.next() % _middleNames.size()];
-	string lastName = _lastNames[rng.next() % _lastNames.size()];
-
-	FullName result(firstName, middleName, lastName);
-
-	return result;
-}
-
 // ---- First name ----
 RandomFirstName::RandomFirstName()
 {
@@ -92,6 +73,30 @@ string RandomFirstName::next(Random rng)
 	}
 
 	return _firstNames[result];
+}
+
+// ---- Full name ----
+RandomFullName::RandomFullName()
+{
+	File file;
+	_middleNames = file.readTXT(MIDDLENAMES);
+	_lastNames = file.readTXT(LASTNAMES);
+}
+
+FullName RandomFullName::next(Random rng)
+{
+	string firstName = RandomFirstName().next(rng);
+	string middleName = _middleNames[rng.next() % _middleNames.size()];
+	string lastName = _lastNames[rng.next() % _lastNames.size()];
+
+	FullName result(firstName, middleName, lastName);
+
+	return result;
+}
+
+float RandomGPA::next(Random rng)
+{
+	return rng.next() % 101 / 10.0;
 }
 
 // ---- Email ----
@@ -231,24 +236,41 @@ Address RandomAddress::next(Random rng)
 	return add;
 }
 
-Student RandomStudent::next()
+Student RandomStudent::next(Random rng)
 {
 	Student result;
 
 	RandomFullName fullNameRng;
+	RandomGPA gpaRng;
 	RandomEmail emailRng;
 	RandomTelephone telephoneRng;
 	RandomDOB dobRng;
 	RandomAddress addressRng;
 
-	result.setID(_rng.next());
-	FullName name = fullNameRng.next(_rng);
+	result.setID(rng.next());
+	FullName name = fullNameRng.next(rng);
 	result.setName(name);
-	result.setGPA(_rng.next() % 100 / 10.0);
-	result.setEmail(emailRng.next(_rng, name));
-	result.setTelephone(telephoneRng.next(_rng));
-	result.setDOB(dobRng.next(_rng));
-	result.setAddress(addressRng.next(_rng));
+	result.setGPA(gpaRng.next(rng));
+	result.setEmail(emailRng.next(rng, name));
+	result.setTelephone(telephoneRng.next(rng));
+	result.setDOB(dobRng.next(rng));
+	result.setAddress(addressRng.next(rng));
 
 	return result;
+}
+
+vector<Student> RandomStudents::next()
+{
+	int size = _rng.next(5, 10);
+	RandomStudent studentRng;
+	vector<Student> randomStudents;
+
+	for (int i = 0; i < size; i++)
+	{
+		Student randomStudent = studentRng.next(_rng);
+		randomStudents.push_back(randomStudent);
+		cout << randomStudent.toString() << endl;
+	}
+
+	return randomStudents;
 }

@@ -40,11 +40,34 @@ Student Student::parseStudent(vector<string> attributes)
 	return result;
 }
 
+Students::Students()
+{
+	
+}
+
+Students::Students(vector<Student> list)
+{
+	_students = list;
+}
+
 Students::Students(vector<vector<string>> collections)
 {
 	for (int i = 0; i < collections.size(); i++)
 	{
 		_students.push_back(Student::parseStudent(collections[i]));
+	}
+}
+
+void Students::add(Student student)
+{
+	_students.push_back(student);
+}
+
+void Students::append(vector<Student> list)
+{
+	for (int i = 0; i < list.size(); i++)
+	{
+		add(list[i]);
 	}
 }
 
@@ -59,7 +82,31 @@ string Students::toString()
 	return builder.str();
 }
 
-float Students::calcAvgGPA()
+double Students::calcAvgGPA()
 {
+	double sum = 0;
+	for (int i = 0; i < _students.size(); i++)
+	{
+		sum += _students[i].GPA();
+	}
 
+	double avgGPA = sum / _students.size();
+	return avgGPA;
 }
+
+vector<Student> Students::findAboveAvg()
+{
+	vector<Student> result;
+	double avgGPA = calcAvgGPA();
+
+	for (int i = 0; i < _students.size(); i++)
+	{
+		if (_students[i].GPA() >= avgGPA)
+		{
+			result.push_back(_students[i]);
+		}
+	}
+
+	return result;
+}
+

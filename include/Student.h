@@ -17,6 +17,7 @@ private:
 	Address _address;
 
 public:
+	float GPA() { return _GPA; }
 	void setID(int id) { _id = id; }
 	void setName(FullName name) { _name = name; }
 	void setGPA(float GPA) { _GPA = GPA; }
@@ -39,10 +40,14 @@ private:
 	vector<Student> _students;
 
 public:
-	Students(vector<vector<string>>);
+	Students();
 	Students(vector<Student>);
+	Students(vector<vector<string>>);
 
 public:
+	void add(Student);
+	void append(vector<Student>);
 	string toString();
-	float calcAvgGPA();
+	double calcAvgGPA();
+	vector<Student> findAboveAvg();
 };
