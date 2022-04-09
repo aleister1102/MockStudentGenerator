@@ -99,7 +99,7 @@ FullName RandomFullName::next(Random rng)
 
 float RandomGPA::next(Random rng)
 {
-	return rng.next() % 101 / 10.0;
+	return rng.next() % 1001 / 100.0;
 }
 
 // ---- Email ----

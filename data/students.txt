@@ -1,70 +1,35 @@
-Student: 28133 - Nguyen Thi Bot
-    GPA=3.50, Telephone=0921-867-069
-    Email=ntbot@netflix.com
-    DOB=14/07/1953
-    Address=40 Tan Lap, Thu Thiem Ward, Binh Tan District, Ho Chi Minh city
-Student: 19289 - Hoang Dieu Bong
-    GPA=1.20, Telephone=0984-378-025
-    Email=hdbong@facebook.com
-    DOB=04/06/1980
-    Address=34 Tan Ky Tan Quy, Ward 7, Binh Thanh District, Ho Chi Minh city
-Student: 14850 - Nguyen Thi Bai
-    GPA=5.80, Telephone=0886-613-336
-    Email=ntbai@amazon.com
-    DOB=01/12/1910
-    Address=17 Than Nhan Trung, Binh Hung Hoa B Ward, District 1, Ho Chi Minh city
-Student: 11203 - Pham Dieu Bo
-    GPA=8.80, Telephone=0977-049-173
-    Email=pdbo@gmail.com
-    DOB=20/08/1983
-    Address=32 Hoang Hoa Tham, Binh Hung Hoa A Ward, Binh Thanh District, Ho Chi Minh city
-Student: 1666 - Nguyen Ba Bao
-    GPA=4.80, Telephone=0592-335-548
-    Email=nbbao@grab.com
-    DOB=14/08/1905
-    Address=10 Nam Chau, Ben Thanh Ward, District 1, Ho Chi Minh city
-Student: 10086 - Nguyen Ba Chau
-    GPA=6.00, Telephone=0980-157-774
-    Email=nbchau@apple.com
-    DOB=22/05/2002
-    Address=38 Nguyen Hue, Binh Tri Dong A Ward, Binh Thanh District, Ho Chi Minh city
-Student: 30076 - Nguyen Thi Bieu
-    GPA=2.00, Telephone=0986-631-015
-    Email=ntbieu@netflix.com
-    DOB=28/02/1980
-    Address=37 Thai Thuan, Ben Nghe Ward, District 2, Ho Chi Minh city
-Student: 9731 - Nguyen Thi Ca
-    GPA=5.30, Telephone=0924-757-330
-    Email=ntca@amazon.com
-    DOB=06/08/1967
-    Address=20 Giao Hoa, Binh Hung Hoa B Ward, District 2, Ho Chi Minh city
-Student: 27610 - Bui Ba Ben
-    GPA=9.90, Telephone=0960-329-199
-    Email=bbben@amazon.com
-    DOB=30/09/1965
-    Address=34/10 Giao Hoa, Cat Lai Ward, Tan Binh District, Ho Chi Minh city
-Student: 7565 - Le Thi Boc
-    GPA=0.60, Telephone=0939-730-272
-    Email=ltboc@netflix.com
-    DOB=13/03/1996
-    Address=49/21 Ma Lo, Cat Lai Ward, Tan Binh District, Ho Chi Minh city
-Student: 32626 - Phan Dieu An
-    GPA=1.00, Telephone=0928-563-704
-    Email=pdan@yahoo.com
-    DOB=23/12/1957
-    Address=43/40 Hoang Hoa Tham, Ward 1, Binh Tan District, Ho Chi Minh city
-Student: 19997 - Nguyen Ba Bon
-    GPA=0.40, Telephone=0902-438-771
-    Email=nbbon@outlook.com
-    DOB=02/03/1995
-    Address=26/18 Ma Lo, Ward 19, District 1, Ho Chi Minh city
-Student: 16816 - Le Ba Cam
-    GPA=0.10, Telephone=0867-528-854
-    Email=lbcam@outlook.com
-    DOB=04/02/1918
-    Address=40/34 Dien Bien Phu, Tan Dinh Ward, District 1, Ho Chi Minh city
-Student: 27365 - Bui Dieu Can
-    GPA=7.60, Telephone=0927-313-806
-    Email=bdcan@apple.com
-    DOB=07/10/1939
-    Address=49/25 Ly Thai To, An Lac Ward, District 1, Ho Chi Minh city
+Student: 18766 - Do Manh An
+    GPA=9.73, Telephone=0995-989-325
+    Email=dman@netflix.com
+    DOB=27/10/1993
+    Address=43/25 Thai Thuan, Ward 5, Binh Thanh District, Ho Chi Minh city
+Student: 2065 - Le Dieu Cao
+    GPA=2.03, Telephone=0945-960-331
+    Email=ldcao@gmail.com
+    DOB=11/08/1946
+    Address=20/15 Ly Chieu Hoang, An Lac Ward, Binh Thanh District, Ho Chi Minh city
+Student: 28453 - Vu Ba Che
+    GPA=0.94, Telephone=0978-374-274
+    Email=vbche@netflix.com
+    DOB=07/05/1964
+    Address=1/18 Ly Chieu Hoang, Ben Thanh Ward, Tan Binh District, Ho Chi Minh city
+Student: 19747 - Hoang Dieu Bach
+    GPA=0.73, Telephone=0866-810-660
+    Email=hdbach@yahoo.com
+    DOB=21/11/1923
+    Address=29/10 Dien Bien Phu, Ward 7, Binh Thanh District, Ho Chi Minh city
+Student: 1774 - Nguyen Thi Bai
+    GPA=4.89, Telephone=0943-224-114
+    Email=ntbai@facebook.com
+    DOB=18/12/1959
+    Address=41/13 Ma Lo, Ward 2, Tan Binh District, Ho Chi Minh city
+Student: 27704 - Phan Thi Bao
+    GPA=2.80, Telephone=0960-352-659
+    Email=ptbao@github.com
+    DOB=23/12/2014
+    Address=2/11 Nghia Hoa, Thu Thiem Ward, District 2, Ho Chi Minh city
+Student: 17138 - Tran Dieu Chanh
+    GPA=4.88, Telephone=0830-145-721
+    Email=tdchanh@yahoo.com
+    DOB=15/11/1946
+    Address=49/39 Lo Te, Ward 7, District 2, Ho Chi Minh city

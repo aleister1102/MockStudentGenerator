@@ -16,7 +16,7 @@ string Student::toString()
 
 	builder << "ID: " << _id << "\n"
 		<< "Name: " << _name.toString() << "\n"
-		<< "GPA: " << _gpa << "\n"
+		<< "GPA: " << to_string(_gpa).substr(0, 4) << "\n"
 		<< "Telephone: " << _telephone << "\n"
 		<< "Email: " << _email << "\n"
 		<< "DOB: " << _dob.toString() << "\n"
@@ -114,6 +114,6 @@ void Students::findAboveAvg()
 	{
 		cout << resultList[i].getID() << " - "
 			<< resultList[i].getName().toString() << ", "
-			<< "GPA: " << resultList[i].getGPA() << endl;
+			<< "GPA: " << to_string(resultList[i].getGPA()).substr(0, 4) << endl;
 	}
 }
