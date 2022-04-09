@@ -13,7 +13,7 @@ void File::readFile(string fileName)
 
 void File::writeFile(string fileName)
 {
-	_file.open(fileName, ios::out);
+	_file.open(fileName, ios::out | ios::trunc);
 
 	if (!_file)
 	{
@@ -77,6 +77,21 @@ vector<string> File::readTXT(string fileName)
 	return strings;
 }
 
+vector<string> File::readStudentStrings(fstream& file)
+{
+	vector<string> studentStrings;
+	for (int i = 0; i < 5; i++)
+	{
+		string line;
+		getline(file, line);
+
+		if (line == "")
+			break;
+		studentStrings.push_back(line);
+	}
+	return studentStrings;
+}
+
 vector<Student> File::readStudents(string fileName)
 {
 	readFile(fileName);
@@ -84,21 +99,32 @@ vector<Student> File::readStudents(string fileName)
 
 	while (!_file.eof())
 	{
-		vector<string> studentStrings;
-		for (int i = 0; i < 5; i++)
-		{
-			string line;
-			getline(_file, line);
-
-			if (line.empty())
-				continue;
-			studentStrings.push_back(line);
-		}
+		vector<string> studentStrings = readStudentStrings(_file);
+		if (studentStrings.size() == 0)
+			break;
 		vector<string> attributes = String::parseStudentStrings(studentStrings);
-		Student student = Student::parseStudent(attributes);
+		StringToStudentConverter converter;
+		Student student = converter.convert(attributes);
 		students.push_back(student);
 	}
 
 	_file.close();
 	return students;
+}
+
+void File::writeStudents(string fileName, vector<Student> students)
+{
+	writeFile(fileName);
+	StringToStudentConverter converter;
+
+	for (int i = 0; i < students.size(); i++)
+	{
+		vector<string> studentStrings = converter.convertBack(students[i]);
+		for (int i = 0; i < 5; i++)
+		{
+			_file << studentStrings[i];
+		}
+	}
+
+	_file.close();
 }

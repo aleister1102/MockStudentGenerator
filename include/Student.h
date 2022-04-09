@@ -1,7 +1,7 @@
 #pragma once
 #include "lib.h"
 #include "FullName.h"
-#include "DOB.h"
+#include "Date.h"
 #include "Address.h"
 #include "String.h"
 
@@ -10,7 +10,7 @@ class Student
 private:
 	int _id;
 	FullName _name;
-	float _GPA;
+	float _gpa;
 	string _email;
 
 	string _telephone;
@@ -18,10 +18,16 @@ private:
 	Address _address;
 
 public:
-	float getGPA() { return _GPA; }
+	int getID() { return _id; }
+	FullName getName() { return _name; }
+	float getGPA() { return _gpa; }
+	string getEmail() { return _email; }
+	string getTelephone() { return _telephone; }
+	Date getDOB() { return _dob; }
+	Address getAddress() { return _address; }
 	void setID(int id) { _id = id; }
 	void setName(FullName name) { _name = name; }
-	void setGPA(float gpa) { _GPA = gpa; }
+	void setGPA(float gpa) { _gpa = gpa; }
 	void setTelephone(string telephone) { _telephone = telephone; }
 	void setEmail(string email) { _email = email; }
 	void setDOB(Date dob) { _dob = dob; }
@@ -32,25 +38,26 @@ public:
 
 public:
 	string toString();
-	string toStringWriteToFile();
-	static Student parseStudent(vector<string>);
 };
 
 class Students
 {
 private:
 	vector<Student> _students;
+
 public:
+	vector<Student> getStudents() { return _students; }
 	float averageScore();
 
 public:
+	Students();
 	Students(vector<Student>);
 	Students(vector<vector<string>>);
 
 public:
 	void add(Student);
 	void add(vector<Student>);
+	void append(Students);
 	string toString();
-	void writeStudentToFile(string);
-	vector<Student> findAboveAvg();
+	Students findAboveAvg();
 };

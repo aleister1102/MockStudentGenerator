@@ -1,6 +1,6 @@
 #include "include/Random.h"
 #include "include/Address.h"
-#include "include/DOB.h"
+#include "include/Date.h"
 #include "include/File.h"
 
 /**
@@ -269,7 +269,6 @@ vector<Student> RandomStudents::next()
 	{
 		Student randomStudent = studentRng.next(_rng);
 		randomStudents.push_back(randomStudent);
-		cout << randomStudent.toString() << endl;
 	}
 
 	return randomStudents;

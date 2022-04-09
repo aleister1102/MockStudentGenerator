@@ -1,4 +1,4 @@
-#include "include/DOB.h"
+#include "include/Date.h"
 
 Date::Date()
 {
@@ -18,7 +18,12 @@ string Date::toString()
 {
 	stringstream builder;
 
-	builder << _day << "/" << _month << "/" << _year;
+	if (_day < 10)
+		builder << "0";
+	builder << _day << "/";
+	if (_month < 10)
+		builder << "0";
+	builder << _month << "/" << _year;
 
 	string result = builder.str();
 	return result;

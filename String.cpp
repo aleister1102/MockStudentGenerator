@@ -38,12 +38,15 @@ string String::trim(string line, char character)
 		result.erase(result.length() - 1, 1);
 	}
 
-	for (int i = 1; i < result.size() - 1; i++)
+	for (int i = 0; i < result.size(); i++)
 	{
 		if (result.at(i) == character)
 		{
 			if (result.at(i - 1) == character || result.at(i + 1) == character)
+			{
 				result.erase(i, 1);
+				i -= 1;
+			}
 		}
 	}
 
@@ -114,9 +117,9 @@ vector<string> String::parseStudentStrings(vector<string> lines)
 	attributes.push_back(dob);
 	attributes.push_back(houseNumber);
 	attributes.push_back(trim(street));
-	attributes.push_back(wardName != "" ? wardName : wardNumber);
-	attributes.push_back(districtName != "" ? districtName : districtNumber);
-	attributes.push_back(city);
+	attributes.push_back(trim(wardName != "" ? wardName : wardNumber));
+	attributes.push_back(trim(districtName != "" ? districtName : districtNumber));
+	attributes.push_back(trim(city));
 
 	return attributes;
 }

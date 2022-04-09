@@ -30,7 +30,7 @@ string Address::toString()
 	}
 	else
 	{
-		builder << _ward << " Ward " << ", ";
+		builder << _ward << " Ward" << ", ";
 	}
 
 	if (String::searchRegex(_district, NUMBERS) != "")
@@ -39,7 +39,7 @@ string Address::toString()
 	}
 	else
 	{
-		builder << _district << " District " << ", ";
+		builder << _district << " District" << ", ";
 	}
 
 	builder << _city << " city";

@@ -7,6 +7,7 @@
 
 int main()
 {
+#if 1
 	// Đọc students từ file (task 0)
 	File file;
 	Students students(file.readStudents(STUDENTS2));
@@ -16,14 +17,23 @@ int main()
 	Students randomStudents(studentsRng.next());
 	cout << "----- Random Students -----\n";
 	cout << randomStudents.toString() << endl;
+	// Append vào students và ghi đè vào file (task 3)
+	cout << "----- Students after appending -----\n";
+	students.append(randomStudents);
+	cout << students.toString() << endl;
+	file.writeStudents(STUDENTS2, students.getStudents());
 	// Tính điểm trung bình của students (task 4)
 	cout << "----- Average Score -----\n";
 	cout << students.averageScore() << endl;
+	// Tìm students có điểm lớn hơn trung bình (task 5)
+	cout << "----- Students have above average scorce -----\n";
+	cout << students.findAboveAvg().toString() << endl;
+#endif
 
 #if 0
 	// Viết các test unit như này,
 	// chẳng hạn viết test cho phương thức String::trim
-	string s = "    Nguyen Van    A   ";
+	string s = "    Nguyen   Van    A   ";
 	cout << String::trim(s) << endl;
 #endif
 
