@@ -30,6 +30,7 @@ public:
 
 public:
 	string toString();
+	string toStringWriteToFile();
 	static Student parseStudent(vector<string>);
 };
 
@@ -45,4 +46,5 @@ public:
 public:
 	string toString();
 	float calcAvgGPA();
+	void writeStudentToFile(string);
 };

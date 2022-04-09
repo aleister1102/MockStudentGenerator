@@ -7,7 +7,7 @@
 
 int main()
 {
-    File file;
+	File file;
 #if 0
 	vector<vector<string>> parsedStrings = file.readCSV("data/students.csv");
 
@@ -32,13 +32,19 @@ int main()
 		cout << tele.next() << endl;
 	}
 #endif
-    RandomStudent studentRng;
+	// RandomStudent studentRng;
 
-    for (int i = 0; i < 100; i++)
-    {
-        Student randomStudent = studentRng.next();
-        cout << randomStudent.toString() << "\n";
-    }
+	// for (int i = 0; i < 100; i++)
+	// {
+	// 	Student randomStudent = studentRng.next();
+	// 	cout << randomStudent.toString() << "\n";
+	// }
+	vector<vector<string>> parsedStrings = file.readCSV(STUDENTS);
 
-    return 0;
+	Students students(parsedStrings);
+	cout << students.toString() << endl;
+
+	students.writeStudentToFile("data/test.csv");
+
+	return 0;
 }
