@@ -50,6 +50,11 @@ public:
 	FullName next(Random);
 };
 
+class RandomGPA {
+public:
+	float next(Random);
+};
+
 class RandomEmail
 {
 private:

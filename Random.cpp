@@ -47,25 +47,6 @@ int Random::next(int ceiling)
 	return num;
 }
 
-// ---- Full name ----
-RandomFullName::RandomFullName()
-{
-	File file;
-	_middleNames = file.readTXT(MIDDLENAMES);
-	_lastNames = file.readTXT(LASTNAMES);
-}
-
-FullName RandomFullName::next(Random rng)
-{
-	string firstName = RandomFirstName().next(rng);
-	string middleName = _middleNames[rng.next() % _middleNames.size()];
-	string lastName = _lastNames[rng.next() % _lastNames.size()];
-
-	FullName result(firstName, middleName, lastName);
-
-	return result;
-}
-
 // ---- First name ----
 RandomFirstName::RandomFirstName()
 {
@@ -92,6 +73,30 @@ string RandomFirstName::next(Random rng)
 	}
 
 	return _firstNames[result];
+}
+
+// ---- Full name ----
+RandomFullName::RandomFullName()
+{
+	File file;
+	_middleNames = file.readTXT(MIDDLENAMES);
+	_lastNames = file.readTXT(LASTNAMES);
+}
+
+FullName RandomFullName::next(Random rng)
+{
+	string firstName = RandomFirstName().next(rng);
+	string middleName = _middleNames[rng.next() % _middleNames.size()];
+	string lastName = _lastNames[rng.next() % _lastNames.size()];
+
+	FullName result(firstName, middleName, lastName);
+
+	return result;
+}
+
+float RandomGPA::next(Random rng)
+{
+	return rng.next() % 101 / 10.0;
 }
 
 // ---- Email ----
@@ -236,6 +241,7 @@ Student RandomStudent::next(Random rng)
 	Student result;
 
 	RandomFullName fullNameRng;
+	RandomGPA gpaRng;
 	RandomEmail emailRng;
 	RandomTelephone telephoneRng;
 	RandomDOB dobRng;
@@ -244,7 +250,7 @@ Student RandomStudent::next(Random rng)
 	result.setID(rng.next());
 	FullName name = fullNameRng.next(rng);
 	result.setName(name);
-	result.setGPA(rng.next() % 100 / 10.0);
+	result.setGPA(gpaRng.next(rng));
 	result.setEmail(emailRng.next(rng, name));
 	result.setTelephone(telephoneRng.next(rng));
 	result.setDOB(dobRng.next(rng));
@@ -255,14 +261,16 @@ Student RandomStudent::next(Random rng)
 
 vector<Student> RandomStudents::next()
 {
-	vector<Student> students;
-	int n = _rng.next(5, 10);
+	int size = _rng.next(5, 10);
+	RandomStudent studentRng;
+	vector<Student> randomStudents;
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < size; i++)
 	{
-		Student student = RandomStudent().next(_rng);
-		students.push_back(student);
+		Student randomStudent = studentRng.next(_rng);
+		randomStudents.push_back(randomStudent);
+		cout << randomStudent.toString() << endl;
 	}
 
-	return students;
+	return randomStudents;
 }

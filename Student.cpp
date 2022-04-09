@@ -114,3 +114,20 @@ void Students::writeStudentToFile(string filename)
 	}
 	f.close();
 }
+
+vector<Student> Students::findAboveAvg()
+{
+	vector<Student> result;
+	double avgGPA = averageScore();
+
+	for (int i = 0; i < _students.size(); i++)
+	{
+		if (_students[i].getGPA() >= avgGPA)
+		{
+			result.push_back(_students[i]);
+		}
+	}
+
+	return result;
+}
+

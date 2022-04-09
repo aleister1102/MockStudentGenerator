@@ -45,10 +45,12 @@ public:
 
 public:
 	Students(vector<Student>);
+	Students(vector<vector<string>>);
 
 public:
 	void add(Student);
 	void add(vector<Student>);
 	string toString();
 	void writeStudentToFile(string);
+	vector<Student> findAboveAvg();
 };
