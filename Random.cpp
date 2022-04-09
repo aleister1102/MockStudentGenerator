@@ -58,7 +58,7 @@ RandomFirstName::RandomFirstName()
 
 string RandomFirstName::next(Random rng)
 {
-	float u = rng.next() % 100 / 100.0;
+	float u = rng.next(0, 100) % 101 / 100.0;
 	float sp = 0;
 	int result = 0;
 

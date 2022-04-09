@@ -44,6 +44,19 @@ vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vec
 	return names;
 }
 
+vector<tuple<string, string>> parseFirstNames(vector<vector<string>> collections)
+{
+	vector<tuple<string, string>> names_frequencies;
+
+	for (size_t i = 0; i < collections.size(); i++)
+	{
+		tuple<string, string> name_frequency = make_tuple(collections[i][0], collections[i][1]);
+		names_frequencies.push_back(name_frequency);
+	}
+
+	return names_frequencies;
+}
+
 FullName FullName::parseFullName(string str)
 {
 	vector<string> names = String::split(str);

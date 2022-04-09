@@ -28,3 +28,5 @@ public:
 public:
 	bool operator==(const FullName&);
 };
+
+vector<tuple<string, string>> parseFirstNames(vector<vector<string>> collections);

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <tuple>
 // Unicode
 #include <Windows.h>
 #include <io.h>

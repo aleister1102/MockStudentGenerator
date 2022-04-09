@@ -2,6 +2,7 @@
 .vscode/
 x64/
 build/
+patterns.txt
 
 *.sln
 *.vcxproj

@@ -7,7 +7,7 @@
 
 int main()
 {
-#if 1
+#if 0
 	// Đọc students từ file (task 0)
 	File file;
 	Students students(file.readStudents(STUDENTS2));
@@ -42,5 +42,20 @@ int main()
 	cout << String::searchRegex(s, ID) << endl;
 #endif
 
+#if 1
+	File file;
+	vector<vector<string>> firstNames = file.readCSV(FIRSTNAMES);
+
+	vector<tuple<string, string>> firstNamesTuples = parseFirstNames(firstNames);
+
+	for (size_t i = 0; i < firstNamesTuples.size(); i++)
+	{
+		string firstName;
+		string frequency;
+		tie(firstName, frequency) = firstNamesTuples[i];
+		cout << firstName << ": " << frequency << endl;
+	}
+
+#endif
 	return 0;
 }
