@@ -27,7 +27,7 @@ int main()
 	cout << students.averageScore() << endl;
 	// Tìm students có điểm lớn hơn trung bình (task 5)
 	cout << "----- Students have above average scorce -----\n";
-	cout << students.findAboveAvg().toString() << endl;
+	students.findAboveAvg();
 #endif
 
 #if 0

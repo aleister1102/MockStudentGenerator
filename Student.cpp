@@ -53,7 +53,7 @@ Students::Students(vector<Student> students)
 
 /**
  * The function `add` takes a `Student` object as an argument and adds it to the `_students` vector
- * 
+ *
  * @param student The student to add to the list.
  */
 void Students::add(Student student)
@@ -63,7 +63,7 @@ void Students::add(Student student)
 
 /**
  * This function takes a vector of students and adds each student to the students vector
- * 
+ *
  * @param students A vector of Student objects.
  */
 void Students::add(vector<Student> students)
@@ -77,7 +77,7 @@ void Students::add(vector<Student> students)
 /**
  * Appends the students in the given Students object to the end of the list of students in this
  * Students object
- * 
+ *
  * @param students The students to add to the list.
  */
 void Students::append(Students students)
@@ -96,18 +96,24 @@ string Students::toString()
 	return builder.str();
 }
 
-Students Students::findAboveAvg()
+void Students::findAboveAvg()
 {
-	Students result;
+	Students students;
 	double avgGPA = averageScore();
 
 	for (size_t i = 0; i < _students.size(); i++)
 	{
 		if (_students[i].getGPA() >= avgGPA)
 		{
-			result.add(_students[i]);
+			students.add(_students[i]);
 		}
 	}
 
-	return result;
+	vector<Student> resultList = students.getStudents();
+	for (size_t i = 0; i < resultList.size(); i++)
+	{
+		cout << resultList[i].getID() << " - "
+			<< resultList[i].getName().toString() << ", "
+			<< "GPA: " << resultList[i].getGPA() << endl;
+	}
 }

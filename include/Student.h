@@ -61,5 +61,5 @@ public:
 	void add(vector<Student>);
 	void append(Students);
 	string toString();
-	Students findAboveAvg();
+	void findAboveAvg();
 };
