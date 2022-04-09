@@ -1,4 +1,4 @@
-#include "include/Address.h"
+﻿#include "include/Address.h"
 
 Address::Address()
 {
@@ -22,24 +22,43 @@ string Address::toString()
 {
 	stringstream builder;
 
-	builder << _number << ", " << _street << ", "
-		<< _ward << ", " << _district << ", " << _city;
+	builder << _number << " " << _street << ", ";
+
+	if (String::searchRegex(_ward, NUMBERS) != "")
+	{
+		builder << "Ward " << _ward << ", ";
+	}
+	else
+	{
+		builder << _ward << " Ward " << ", ";
+	}
+
+	if (String::searchRegex(_district, NUMBERS) != "")
+	{
+		builder << "District " << _district << ", ";
+	}
+	else
+	{
+		builder << _district << " District " << ", ";
+	}
+
+	builder << _city << " city";
 
 	string result = builder.str();
 	return result;
 }
 
-Address Address::parseAddress(string str)
+// addressDetails thực chất là vector các thuộc tính Student
+// index từ 6 - 10 là thuộc về Address
+Address Address::parseAddress(vector<string> addressDetails)
 {
-	vector<string> address = String::split(str);
-
 	Address result;
 
-	result.setNumber(address[0]);
-	result.setStreet(address[1]);
-	result.setWard(address[2]);
-	result.setDistrict(address[3]);
-	result.setCity(address[4]);
+	result.setNumber(addressDetails[6]);
+	result.setStreet(addressDetails[7]);
+	result.setWard(addressDetails[8]);
+	result.setDistrict(addressDetails[9]);
+	result.setCity(addressDetails[10]);
 
 	return result;
 }

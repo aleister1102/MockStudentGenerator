@@ -3,6 +3,7 @@
 #include "FullName.h"
 #include "DOB.h"
 #include "Address.h"
+#include "String.h"
 
 class Student
 {
@@ -17,9 +18,10 @@ private:
 	Address _address;
 
 public:
+	float getGPA() { return _GPA; }
 	void setID(int id) { _id = id; }
 	void setName(FullName name) { _name = name; }
-	void setGPA(float GPA) { _GPA = GPA; }
+	void setGPA(float gpa) { _GPA = gpa; }
 	void setTelephone(string telephone) { _telephone = telephone; }
 	void setEmail(string email) { _email = email; }
 	void setDOB(Date dob) { _dob = dob; }
@@ -38,13 +40,15 @@ class Students
 {
 private:
 	vector<Student> _students;
+public:
+	float averageScore();
 
 public:
-	Students(vector<vector<string>>);
 	Students(vector<Student>);
 
 public:
+	void add(Student);
+	void add(vector<Student>);
 	string toString();
-	float calcAvgGPA();
 	void writeStudentToFile(string);
 };

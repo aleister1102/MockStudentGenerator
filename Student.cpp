@@ -1,5 +1,7 @@
 #include "include/Student.h"
 
+// ---- Student ----
+
 Student::Student()
 {
 	_id = 0;
@@ -13,12 +15,12 @@ string Student::toString()
 	stringstream builder;
 
 	builder << "ID: " << _id << "\n"
-		   << "Name: " << _name.toString() << "\n"
-		   << "GPA: " << _GPA << "\n"
-		   << "Telephone: " << _telephone << "\n"
-		   << "Email: " << _email << "\n"
-		   << "DOB: " << _dob.toString() << "\n"
-		   << "Address: " << _address.toString() << "\n";
+		<< "Name: " << _name.toString() << "\n"
+		<< "GPA: " << _GPA << "\n"
+		<< "Telephone: " << _telephone << "\n"
+		<< "Email: " << _email << "\n"
+		<< "DOB: " << _dob.toString() << "\n"
+		<< "Address: " << _address.toString() << "\n";
 
 	string result = builder.str();
 
@@ -30,12 +32,12 @@ string Student::toStringWriteToFile()
 	stringstream builder;
 
 	builder << _id << ","
-		   << _name.toString() << ","
-		   << _GPA << ","
-		   << _telephone << ","
-		   << _email << ","
-		   << _dob.toString() << ","
-		   << _address.toString();
+		<< _name.toString() << ","
+		<< _GPA << ","
+		<< _telephone << ","
+		<< _email << ","
+		<< _dob.toString() << ","
+		<< _address.toString();
 
 	string result = builder.str();
 
@@ -52,16 +54,28 @@ Student Student::parseStudent(vector<string> attributes)
 	result.setTelephone(attributes[3]);
 	result.setEmail(attributes[4]);
 	result.setDOB(Date::parseDate(attributes[5]));
-	// result.setAddress(Address::parseAddress(attributes[6]));
+	result.setAddress(Address::parseAddress(attributes));
 
 	return result;
 }
 
-Students::Students(vector<vector<string>> collections)
+// ---- Students ----
+
+Students::Students(vector<Student> students)
 {
-	for (int i = 0; i < collections.size(); i++)
+	_students = students;
+}
+
+void Students::add(Student student)
+{
+	_students.push_back(student);
+}
+
+void Students::add(vector<Student> students)
+{
+	for (int i = 0; i < students.size(); i++)
 	{
-		_students.push_back(Student::parseStudent(collections[i]));
+		add(students[i]);
 	}
 }
 
@@ -76,9 +90,17 @@ string Students::toString()
 	return builder.str();
 }
 
-float Students::calcAvgGPA()
+float Students::averageScore()
 {
-	return 0;
+	float sum = 0;
+
+	for (int i = 0; i < _students.size(); i++)
+	{
+		sum += _students[i].getGPA();
+	}
+
+	float avgScore = sum / _students.size();
+	return avgScore;
 }
 
 void Students::writeStudentToFile(string filename)

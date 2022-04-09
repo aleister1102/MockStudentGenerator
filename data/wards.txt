@@ -1,40 +1,40 @@
-Ben Nghe Ward
-Ben Thanh Ward
-Cau Kho Ward
-Da Kao Ward
-Ong Lanh Ward
-Co Giang Ward
-Pham Ngu Lao Ward
-Tan Dinh Ward
-An Khanh Ward
-An Phu Ward
-Binh An Ward
-Binh Khanh Ward
-Cat Lai Ward
-Thao Dien Ward
-Thu Thiem Ward
-Thanh My Loi Ward
-Ward 01
-Ward 02
-Ward 03
-Ward 04
-Ward 05
-Ward 06
-Ward 07
-Ward 08
-Ward 11
-Ward 12
-Ward 13
-Ward 14
-Ward 15
-Ward 17
-Ward 19
-Ward 21
-An Lac Ward
-An Lac A Ward
-Binh Hung Hoa Ward
-Binh Hung Hoa A Ward
-Binh Hung Hoa B Ward
-Binh Tri Dong Ward
-Binh Tri Dong A Ward
-Binh Tri Dong B Ward
+Ben Nghe 
+Ben Thanh 
+Cau Kho 
+Da Kao 
+Ong Lanh 
+Co Giang 
+Pham Ngu Lao 
+Tan Dinh 
+An Khanh 
+An Phu 
+Binh An 
+Binh Khanh 
+Cat Lai 
+Thao Dien 
+Thu Thiem 
+Thanh My Loi 
+ 01
+ 02
+ 03
+ 04
+ 05
+ 06
+ 07
+ 08
+ 11
+ 12
+ 13
+ 14
+ 15
+ 17
+ 19
+ 21
+An Lac 
+An Lac A 
+Binh Hung Hoa 
+Binh Hung Hoa A 
+Binh Hung Hoa B 
+Binh Tri Dong 
+Binh Tri Dong A 
+Binh Tri Dong B 

@@ -7,44 +7,30 @@
 
 int main()
 {
+	// Đọc students từ file (task 0)
 	File file;
-#if 0
-	vector<vector<string>> parsedStrings = file.readCSV("data/students.csv");
-
-	Students students(parsedStrings);
+	Students students(file.readStudents(STUDENTS2));
 	cout << students.toString() << endl;
+	// Random số n và students (task 1 + 2)
+	RandomStudents studentsRng;
+	Students randomStudents(studentsRng.next());
+	cout << "----- Random Students -----\n";
+	cout << randomStudents.toString() << endl;
+	// Tính điểm trung bình của students (task 4)
+	cout << "----- Average Score -----\n";
+	cout << students.averageScore() << endl;
 
-	FullName name("Le", "Minh", "Quan");
-	cout << name.toString() << endl;
-#endif
 #if 0
-	RandomFullName fullNameRng;
-	RandomAddress addressRng;
-	RandomEmail emailRng;
-	RandomTelephone tele;
-
-	for (int i = 0; i < 10; i++)
-	{
-		FullName name = fullNameRng.next();
-		cout << name.toString() << endl;
-		cout << addressRng.next().toString() << endl;
-		cout << emailRng.next(name) << endl;
-		cout << tele.next() << endl;
-	}
+	// Viết các test unit như này,
+	// chẳng hạn viết test cho phương thức String::trim
+	string s = "    Nguyen Van    A   ";
+	cout << String::trim(s) << endl;
 #endif
-	// RandomStudent studentRng;
 
-	// for (int i = 0; i < 100; i++)
-	// {
-	// 	Student randomStudent = studentRng.next();
-	// 	cout << randomStudent.toString() << "\n";
-	// }
-	vector<vector<string>> parsedStrings = file.readCSV(STUDENTS);
-
-	Students students(parsedStrings);
-	cout << students.toString() << endl;
-
-	students.writeStudentToFile("data/test.csv");
+#if 0
+	string s = "20120356 Le Minh Quan";
+	cout << String::searchRegex(s, ID) << endl;
+#endif
 
 	return 0;
 }

@@ -178,15 +178,6 @@ Date RandomDOB::next(Random rng)
 }
 
 // ---- Adress ----
-RandomAddress::RandomAddress()
-{
-	File file;
-	_streets = file.readTXT(STREETS);
-	_wards = file.readTXT(WARDS);
-	_districts = { "District 01", "District 02 - Thu Duc City", "Tan Binh District",
-				"Binh Thanh District", "Binh Tan District" };
-}
-
 /**
  * @brief Generate a random address number
  *
@@ -205,6 +196,15 @@ string RandomAddress::randomNumber(Random rng)
 	string result = builder.str();
 
 	return result;
+}
+
+RandomAddress::RandomAddress()
+{
+	File file;
+	_streets = file.readTXT(STREETS);
+	_wards = file.readTXT(WARDS);
+	_districts = { "1", "2", "Tan Binh",
+				"Binh Thanh", "Binh Tan" };
 }
 
 /**
@@ -226,12 +226,12 @@ Address RandomAddress::next(Random rng)
 
 	string number = this->randomNumber(rng);
 
-	Address add(number, street, ward, district, "Ho Chi Minh city");
+	Address add(number, street, ward, district, "Ho Chi Minh");
 
 	return add;
 }
 
-Student RandomStudent::next()
+Student RandomStudent::next(Random rng)
 {
 	Student result;
 
@@ -241,14 +241,28 @@ Student RandomStudent::next()
 	RandomDOB dobRng;
 	RandomAddress addressRng;
 
-	result.setID(_rng.next());
-	FullName name = fullNameRng.next(_rng);
+	result.setID(rng.next());
+	FullName name = fullNameRng.next(rng);
 	result.setName(name);
-	result.setGPA(_rng.next() % 100 / 10.0);
-	result.setEmail(emailRng.next(_rng, name));
-	result.setTelephone(telephoneRng.next(_rng));
-	result.setDOB(dobRng.next(_rng));
-	result.setAddress(addressRng.next(_rng));
+	result.setGPA(rng.next() % 100 / 10.0);
+	result.setEmail(emailRng.next(rng, name));
+	result.setTelephone(telephoneRng.next(rng));
+	result.setDOB(dobRng.next(rng));
+	result.setAddress(addressRng.next(rng));
 
 	return result;
+}
+
+vector<Student> RandomStudents::next()
+{
+	vector<Student> students;
+	int n = _rng.next(5, 10);
+
+	for (int i = 0; i < n; i++)
+	{
+		Student student = RandomStudent().next(_rng);
+		students.push_back(student);
+	}
+
+	return students;
 }

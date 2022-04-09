@@ -87,7 +87,6 @@ private:
 	vector<string> _streets;
 	vector<string> _wards;
 	vector<string> _districts;
-	vector<string> _citys;
 
 public:
 	RandomAddress();
@@ -99,8 +98,14 @@ public:
 
 class RandomStudent
 {
+public:
+	Student next(Random);
+};
+
+class RandomStudents
+{
 private:
 	Random _rng;
 public:
-	Student next();
+	vector<Student> next();
 };
