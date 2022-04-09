@@ -14,7 +14,7 @@ Chương trình chạy theo luồng như sau:
 - In ra GPA trung bình của các học sinh.
 - In ra tất cả các học sinh có GPA trên mức trung bình.
 
-Trong đồ án sử dụng nhiều thư viện tính hợp của C++: vector, sstream, fstream, regex.
+Trong đồ án sử dụng nhiều thư viện tích hợp của C++: vector, sstream, fstream, regex.
 
 Các class được chia thành hai loại:
 1. Business Class gồm các class để xử lý như Random, String, File, Converter.
