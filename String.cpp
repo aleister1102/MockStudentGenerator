@@ -29,10 +29,10 @@ vector<string> String::split(string s, string del)
 /**
  * It removes all leading and trailing characters of a given type, and then removes all instances of
  * that character that are next to each other
- * 
+ *
  * @param line The string to be trimmed.
  * @param character The character to trim from the string.
- * 
+ *
  * @return a string.
  */
 string String::trim(string line, char character)
@@ -64,10 +64,10 @@ string String::trim(string line, char character)
 
 /**
  * It takes a string and a regex pattern and returns the first match of the pattern in the string
- * 
+ *
  * @param line The string to search in
  * @param pattern The pattern to search for.
- * 
+ *
  * @return The first match of the pattern in the line.
  */
 string String::searchRegex(string line, string pattern)
@@ -93,9 +93,9 @@ string String::toLowerCase(string str)
 /**
  * It takes a vector of strings, each string is a line of a student's information, and returns a vector
  * of strings, each string is an attribute of a student
- * 
+ *
  * @param lines a vector of strings, each string is a line of the student's information
- * 
+ *
  * @return A vector of strings.
  */
 vector<string> String::parseStudentStrings(vector<string> lines)
@@ -120,7 +120,7 @@ vector<string> String::parseStudentStrings(vector<string> lines)
 	vector<string> addressDetails = split(address, ", ");
 	string houseNumber_street = searchRegex(addressDetails[0], HOUSE_NUMBER_STREET);
 
-	string houseNumber = searchRegex(houseNumber_street, NUMBERS);
+	string houseNumber = searchRegex(houseNumber_street, HOUSE_NUMBER);
 	string street = searchRegex(houseNumber_street, WORDS);
 
 	string ward = addressDetails[1];
