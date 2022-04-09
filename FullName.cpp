@@ -56,3 +56,8 @@ FullName FullName::parseFullName(string str)
 
 	return result;
 }
+
+bool FullName::operator==(const FullName& other)
+{
+	return _first == other._first && _middle == other._middle && _last == other._last;
+}

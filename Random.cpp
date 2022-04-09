@@ -248,6 +248,11 @@ vector<Student> RandomStudents::next()
 	for (int i = 0; i < size; i++)
 	{
 		Student randomStudent = studentRng.next(_rng);
+		while (Student::isDuplicated(randomStudents, randomStudent))
+		{
+			randomStudent = studentRng.next(_rng);
+		}
+
 		randomStudents.push_back(randomStudent);
 	}
 

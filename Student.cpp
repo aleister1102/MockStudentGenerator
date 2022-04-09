@@ -117,3 +117,27 @@ void Students::findAboveAvg()
 			<< "GPA: " << to_string(resultList[i].getGPA()).substr(0, 4) << endl;
 	}
 }
+
+bool Student::isDuplicated(vector<Student> students, Student student)
+{
+	for (size_t i = 0; i < students.size(); i++)
+	{
+		Student studentToCheck = students[i];
+
+		if (studentToCheck.getID() == student.getID())
+		{
+			return true;
+		}
+		if (studentToCheck.getDOB() == student.getDOB()
+			&& studentToCheck.getName() == student.getName())
+		{
+			return true;
+		}
+		if (studentToCheck.getTelephone() == student.getTelephone())
+		{
+			return true;
+		}
+	}
+
+	return false;
+}

@@ -40,6 +40,7 @@ public:
 
 public:
 	string toString();
+	static bool isDuplicated(vector<Student>, Student);
 };
 
 class Students

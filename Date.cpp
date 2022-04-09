@@ -102,3 +102,8 @@ Date Date::parseDate(string str)
 
 	return result;
 }
+
+bool Date::operator==(const Date& other)
+{
+	return (_day == other._day && _month == other._month && _year == other._year);
+}
