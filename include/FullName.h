@@ -2,6 +2,8 @@
 #include "lib.h"
 #include "String.h"
 
+class FullName;
+
 class FullName
 {
 private:

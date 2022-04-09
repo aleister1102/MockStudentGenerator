@@ -1,6 +1,8 @@
 #pragma once
 #include "lib.h"
 
+class String;
+
 class String
 {
 public:

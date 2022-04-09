@@ -1,5 +1,12 @@
 #include "include/Converter.h"
 
+/**
+ * It takes a vector of strings, and returns a Student object
+ * 
+ * @param attributes a vector of strings that contains the attributes of a student
+ * 
+ * @return A Student object.
+ */
 Student StringToStudentConverter::convert(vector<string> attributes)
 {
 	Student result;
@@ -15,6 +22,13 @@ Student StringToStudentConverter::convert(vector<string> attributes)
 	return result;
 }
 
+/**
+ * It converts a Student object into a vector of strings
+ * 
+ * @param student The student object to be converted to a vector of strings.
+ * 
+ * @return A vector of strings.
+ */
 vector<string> StringToStudentConverter::convertBack(Student student)
 {
 	vector<string> result;

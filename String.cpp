@@ -13,8 +13,8 @@ vector<string> String::split(string s, string del)
 {
 	vector<string> infos;
 
-	int start = 0;
-	int end = (int)s.find(del);
+	size_t start = 0;
+	size_t end = (int)s.find(del);
 	while (end != -1)
 	{
 		infos.push_back(s.substr(start, end - start));
@@ -26,6 +26,15 @@ vector<string> String::split(string s, string del)
 	return infos;
 }
 
+/**
+ * It removes all leading and trailing characters of a given type, and then removes all instances of
+ * that character that are next to each other
+ * 
+ * @param line The string to be trimmed.
+ * @param character The character to trim from the string.
+ * 
+ * @return a string.
+ */
 string String::trim(string line, char character)
 {
 	string result = line;
@@ -38,7 +47,7 @@ string String::trim(string line, char character)
 		result.erase(result.length() - 1, 1);
 	}
 
-	for (int i = 0; i < result.size(); i++)
+	for (size_t i = 0; i < result.size(); i++)
 	{
 		if (result.at(i) == character)
 		{
@@ -53,6 +62,14 @@ string String::trim(string line, char character)
 	return result;
 }
 
+/**
+ * It takes a string and a regex pattern and returns the first match of the pattern in the string
+ * 
+ * @param line The string to search in
+ * @param pattern The pattern to search for.
+ * 
+ * @return The first match of the pattern in the line.
+ */
 string String::searchRegex(string line, string pattern)
 {
 	regex rgx(pattern);
@@ -65,7 +82,7 @@ string String::toLowerCase(string str)
 {
 	string builder;
 
-	for (int i = 0; i < str.length(); i++)
+	for (size_t i = 0; i < str.length(); i++)
 	{
 		builder += (char)tolower(str.at(i));
 	}
@@ -73,6 +90,14 @@ string String::toLowerCase(string str)
 	return builder;
 }
 
+/**
+ * It takes a vector of strings, each string is a line of a student's information, and returns a vector
+ * of strings, each string is an attribute of a student
+ * 
+ * @param lines a vector of strings, each string is a line of the student's information
+ * 
+ * @return A vector of strings.
+ */
 vector<string> String::parseStudentStrings(vector<string> lines)
 {
 	vector<string> attributes;

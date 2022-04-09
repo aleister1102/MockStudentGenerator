@@ -92,6 +92,14 @@ vector<string> File::readStudentStrings(fstream& file)
 	return studentStrings;
 }
 
+/**
+ * It reads a file, parses the file into a vector of strings, converts the vector of strings into a
+ * vector of students, and returns the vector of students
+ * 
+ * @param fileName The name of the file to read from.
+ * 
+ * @return A vector of students.
+ */
 vector<Student> File::readStudents(string fileName)
 {
 	readFile(fileName);
@@ -112,12 +120,18 @@ vector<Student> File::readStudents(string fileName)
 	return students;
 }
 
+/**
+ * It takes a vector of students and writes them to a file
+ * 
+ * @param fileName The name of the file to be written to.
+ * @param students
+ */
 void File::writeStudents(string fileName, vector<Student> students)
 {
 	writeFile(fileName);
 	StringToStudentConverter converter;
 
-	for (int i = 0; i < students.size(); i++)
+	for (size_t i = 0; i < students.size(); i++)
 	{
 		vector<string> studentStrings = converter.convertBack(students[i]);
 		for (int i = 0; i < 5; i++)

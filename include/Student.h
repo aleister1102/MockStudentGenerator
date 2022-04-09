@@ -5,6 +5,9 @@
 #include "Address.h"
 #include "String.h"
 
+class Student;
+class Students;
+
 class Student
 {
 private:
@@ -12,7 +15,6 @@ private:
 	FullName _name;
 	float _gpa;
 	string _email;
-
 	string _telephone;
 	Date _dob;
 	Address _address;

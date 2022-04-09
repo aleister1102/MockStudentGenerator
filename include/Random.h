@@ -8,10 +8,13 @@
 class Random;
 class RandomFirstName;
 class RandomFullName;
+class RandomGPA;
 class RandomEmail;
 class RandomTelephone;
 class RandomDOB;
 class RanmdomAddress;
+class RandomStudent;
+class RandomStudents;
 
 class Random
 {
@@ -97,7 +100,7 @@ public:
 	RandomAddress();
 
 public:
-	string randomNumber(Random);
+	string randomHouseNumber(Random);
 	Address next(Random);
 };
 

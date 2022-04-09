@@ -33,7 +33,7 @@ float Students::averageScore()
 {
 	float sum = 0;
 
-	for (int i = 0; i < _students.size(); i++)
+	for (size_t i = 0; i < _students.size(); i++)
 	{
 		sum += _students[i].getGPA();
 	}
@@ -51,19 +51,35 @@ Students::Students(vector<Student> students)
 	_students = students;
 }
 
+/**
+ * The function `add` takes a `Student` object as an argument and adds it to the `_students` vector
+ * 
+ * @param student The student to add to the list.
+ */
 void Students::add(Student student)
 {
 	_students.push_back(student);
 }
 
+/**
+ * This function takes a vector of students and adds each student to the students vector
+ * 
+ * @param students A vector of Student objects.
+ */
 void Students::add(vector<Student> students)
 {
-	for (int i = 0; i < students.size(); i++)
+	for (size_t i = 0; i < students.size(); i++)
 	{
 		add(students[i]);
 	}
 }
 
+/**
+ * Appends the students in the given Students object to the end of the list of students in this
+ * Students object
+ * 
+ * @param students The students to add to the list.
+ */
 void Students::append(Students students)
 {
 	add(students.getStudents());
@@ -72,7 +88,7 @@ void Students::append(Students students)
 string Students::toString()
 {
 	stringstream builder;
-	for (int i = 0; i < _students.size(); i++)
+	for (size_t i = 0; i < _students.size(); i++)
 	{
 		builder << _students[i].toString() << "\n";
 	}
@@ -85,7 +101,7 @@ Students Students::findAboveAvg()
 	Students result;
 	double avgGPA = averageScore();
 
-	for (int i = 0; i < _students.size(); i++)
+	for (size_t i = 0; i < _students.size(); i++)
 	{
 		if (_students[i].getGPA() >= avgGPA)
 		{

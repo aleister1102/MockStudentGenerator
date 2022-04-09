@@ -2,6 +2,8 @@
 #include "lib.h"
 #include "Student.h"
 
+class StringToStudentConverter;
+
 class StringToStudentConverter
 {
 public:

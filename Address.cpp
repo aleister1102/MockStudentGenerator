@@ -48,7 +48,7 @@ string Address::toString()
 	return result;
 }
 
-// addressDetails thực chất là vector các thuộc tính Student
+// addressDetails thực chất là vector gồm các thuộc tính của Student
 // index từ 6 - 10 là thuộc về Address
 Address Address::parseAddress(vector<string> addressDetails)
 {

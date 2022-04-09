@@ -48,10 +48,10 @@ int Random::next(int ceiling)
 }
 
 // ---- First name ----
+
 RandomFirstName::RandomFirstName()
 {
 	File file;
-
 	vector<vector<string>> firstNamesData = file.readCSV(FIRSTNAMES);
 	_firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
 }
@@ -62,7 +62,7 @@ string RandomFirstName::next(Random rng)
 	float sp = 0;
 	int result = 0;
 
-	for (int i = 0; i < _frequencies.size(); i++)
+	for (size_t i = 0; i < _frequencies.size(); i++)
 	{
 		sp += _frequencies[i] / 100;
 		if (sp >= u)
@@ -76,6 +76,7 @@ string RandomFirstName::next(Random rng)
 }
 
 // ---- Full name ----
+
 RandomFullName::RandomFullName()
 {
 	File file;
@@ -94,25 +95,21 @@ FullName RandomFullName::next(Random rng)
 	return result;
 }
 
+// ---- GPA ----
+
 float RandomGPA::next(Random rng)
 {
 	return rng.next() % 101 / 10.0;
 }
 
 // ---- Email ----
+
 RandomEmail::RandomEmail()
 {
 	File file;
 	_domains = file.readTXT(DOMAINS);
 }
 
-/**
- * Generate a random email address for a given name
- *
- * @param name The full name of the person.
- *
- * @return A string.
- */
 string RandomEmail::next(Random rng, FullName name)
 {
 	stringstream builder;
@@ -124,19 +121,13 @@ string RandomEmail::next(Random rng, FullName name)
 }
 
 // ---- Telephone ----
+
 RandomTelephone::RandomTelephone()
 {
 	File file;
-
 	_operator = file.readTXT(OPERATOR);
 }
 
-/**
- * @brief Generate a random telephone from given operator
- *
- * @param rng Seed time
- * @return A string
- */
 string RandomTelephone::next(Random rng)
 {
 	stringstream builder;
@@ -158,12 +149,8 @@ string RandomTelephone::next(Random rng)
 	return result;
 }
 
-/**
- * @brief Generate a random day of birth
- *
- * @param rng Seed time
- * @return Date data type
- */
+// ---- Date of Birth
+
 Date RandomDOB::next(Random rng)
 {
 	Date dob;
@@ -183,13 +170,8 @@ Date RandomDOB::next(Random rng)
 }
 
 // ---- Adress ----
-/**
- * @brief Generate a random address number
- *
- * @param rng Seed time
- * @return A string
- */
-string RandomAddress::randomNumber(Random rng)
+
+string RandomAddress::randomHouseNumber(Random rng)
 {
 	stringstream builder;
 
@@ -212,12 +194,6 @@ RandomAddress::RandomAddress()
 				"Binh Thanh", "Binh Tan" };
 }
 
-/**
- * @brief Generate a random address
- *
- * @param rng Seed time
- * @return Address data type
- */
 Address RandomAddress::next(Random rng)
 {
 	int temp1 = rng.next(_streets.size());
@@ -229,12 +205,14 @@ Address RandomAddress::next(Random rng)
 	int temp3 = rng.next(_districts.size());
 	string district = _districts[temp3];
 
-	string number = this->randomNumber(rng);
+	string number = this->randomHouseNumber(rng);
 
 	Address add(number, street, ward, district, "Ho Chi Minh");
 
 	return add;
 }
+
+// ---- Student ----
 
 Student RandomStudent::next(Random rng)
 {
@@ -258,6 +236,8 @@ Student RandomStudent::next(Random rng)
 
 	return result;
 }
+
+// ---- Students ----
 
 vector<Student> RandomStudents::next()
 {

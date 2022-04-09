@@ -2,6 +2,8 @@
 #include "lib.h"
 #include "String.h"
 
+class Date;
+
 class Date
 {
 private:

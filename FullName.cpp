@@ -35,7 +35,7 @@ vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vec
 {
 	vector<string> names;
 
-	for (int i = 0; i < collections.size(); i++)
+	for (size_t i = 0; i < collections.size(); i++)
 	{
 		names.push_back(collections[i][0]);
 		frequencies.push_back(stof(collections[i][1]));

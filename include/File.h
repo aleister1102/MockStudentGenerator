@@ -4,6 +4,8 @@
 #include "lib.h"
 #include "Converter.h"
 
+class File;
+
 class File
 {
 private:
