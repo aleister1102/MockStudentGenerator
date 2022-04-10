@@ -28,6 +28,6 @@ int main()
 	// Tìm students có điểm lớn hơn trung bình (task 5)
 	cout << "----- Students have above average scorce -----\n";
 	students.findAboveAvg();
-
+	system("pause");
 	return 0;
 }
