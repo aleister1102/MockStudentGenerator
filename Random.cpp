@@ -49,6 +49,14 @@ int Random::next(int ceiling)
 
 // ---- First name ----
 
+/**
+ * It takes a vector of vectors of strings, and returns a tuple of two vectors of strings and floats
+ * 
+ * @param collections A vector of vectors of strings. Each vector of strings is a collection of a name
+ * and its frequency.
+ * 
+ * @return A tuple of two vectors, one of strings and one of floats.
+ */
 tuple <vector<string>, vector<float>> RandomFirstName::parseFirstNames(vector<vector<string>> collections)
 {
 	tuple <vector<string>, vector<float>> names_frequencies;
