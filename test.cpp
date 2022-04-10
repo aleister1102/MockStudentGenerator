@@ -4,6 +4,7 @@
 #include "include/Random.h"
 #include "include/Student.h"
 #include "include/lib.h"
+#include "include/Number.h"
 
 int main()
 {
@@ -42,7 +43,7 @@ int main()
 	cout << String::searchRegex(s, ID) << endl;
 #endif
 
-#if 1
+#if 0
 	File file;
 	vector<vector<string>> firstNames = file.readCSV(FIRSTNAMES);
 
@@ -55,6 +56,17 @@ int main()
 		tie(firstName, frequency) = firstNamesTuples[i];
 		cout << firstName << ": " << frequency << endl;
 	}
+#endif
+
+#if 1
+	string str = "12121.a1212";
+	bool successful = false;
+	int errorCode = 0;
+	string message = "";
+	float number = 0;
+
+	tie(successful, errorCode, message, number) = Number::parseFloat(str);
+	cout << number << endl;
 
 #endif
 	return 0;

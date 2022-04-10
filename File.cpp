@@ -95,9 +95,9 @@ vector<string> File::readStudentStrings(fstream& file)
 /**
  * It reads a file, parses the file into a vector of strings, converts the vector of strings into a
  * vector of students, and returns the vector of students
- * 
+ *
  * @param fileName The name of the file to read from.
- * 
+ *
  * @return A vector of students.
  */
 vector<Student> File::readStudents(string fileName)
@@ -122,7 +122,7 @@ vector<Student> File::readStudents(string fileName)
 
 /**
  * It takes a vector of students and writes them to a file
- * 
+ *
  * @param fileName The name of the file to be written to.
  * @param students
  */
