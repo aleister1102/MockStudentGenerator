@@ -27,11 +27,11 @@ Dữ liệu lấy từ các nguồn có sẵn, có ghi trong slide môn học.
 - fix: update hoặc sửa code
 - chore: làm mấy thứ lặt vặt bên ngoài như đổi tên file, sửa data, ...
 - refactor: làm gọn code nhưng ko ảnh hưởng đến logic của code
+- doc: chỉnh sửa readme hoặc comment cho code
 
 ## Cấu trúc thư mục
 - data: dữ liệu
 - include: các file header
-- build: file .o và .exe
 
 ## Ngôn ngữ sử dụng: C/C++.
 ## Công cụ hỗ trợ: 
