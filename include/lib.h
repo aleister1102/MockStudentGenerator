@@ -30,6 +30,7 @@ using namespace std;
 // Regex pattern
 #define WORDS "(?! )[A-z ]+"
 #define NUMBERS "-?[0-9]+"
+#define FLOAT "-?[0-9]+\\.{1}[0-9]+"
 #define ID "[0-9]{1,8}"
 #define NAME " [A-z ]+"
 #define GPA "[0-9]+\\.?[0-9]{0,2}(?=,)"
@@ -41,4 +42,3 @@ using namespace std;
 #define WARD "([A-z]+ *)+(?=Ward)"
 #define DISTRICT "([A-z]+ *)+(?=District)"
 #define CITY "([A-z]+ *)+(?=city)"
-#define FLOAT "-?[0-9]+\\.{1}[0-9]+"
