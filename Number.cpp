@@ -82,7 +82,7 @@ float Number::tryParseFloat(string str)
 	ReturnFlags flags;
 	float number = 0;
 
-	tie(flags, number) = parseInt(str);
+	tie(flags, number) = parseFloat(str);
 	if (!flags.successful)
 	{
 		cout << "Error code: " << flags.errorCode << endl;

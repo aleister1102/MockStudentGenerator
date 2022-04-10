@@ -35,6 +35,7 @@ private:
 
 public:
 	RandomFirstName();
+	tuple <vector<string>, vector<float>> parseFirstNames(vector<vector<string>> collections);
 
 public:
 	string next(Random);

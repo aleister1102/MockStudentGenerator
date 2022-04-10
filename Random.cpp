@@ -49,11 +49,24 @@ int Random::next(int ceiling)
 
 // ---- First name ----
 
+tuple <vector<string>, vector<float>> RandomFirstName::parseFirstNames(vector<vector<string>> collections)
+{
+	tuple <vector<string>, vector<float>> names_frequencies;
+
+	for (size_t i = 0; i < collections.size(); i++)
+	{
+		get<0>(names_frequencies).push_back(collections[i][0]);
+		get<1>(names_frequencies).push_back(Number::tryParseFloat(collections[i][1]));
+	}
+
+	return names_frequencies;
+}
+
 RandomFirstName::RandomFirstName()
 {
 	File file;
-	vector<vector<string>> firstNamesData = file.readCSV(FIRSTNAMES);
-	_firstNames = FullName::parseFirstNames(firstNamesData, _frequencies);
+	auto firstNamesData = file.readCSV(FIRSTNAMES);
+	tie(_firstNames, _frequencies) = parseFirstNames(firstNamesData);
 }
 
 string RandomFirstName::next(Random rng)

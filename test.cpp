@@ -25,7 +25,7 @@ int main()
 	file.writeStudents(STUDENTS2, students.getStudents());
 	// Tính điểm trung bình của students (task 4)
 	cout << "----- Average Score -----\n";
-	cout << students.averageScore() << endl;
+	cout << "\t" << students.averageScore() << "\t" << endl;
 	// Tìm students có điểm lớn hơn trung bình (task 5)
 	cout << "----- Students have above average scorce -----\n";
 	students.findAboveAvg();

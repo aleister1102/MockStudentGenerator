@@ -24,10 +24,8 @@ public:
 
 public:
 	string toString();
-	static vector<string> parseFirstNames(vector<vector<string>>, vector<float>&);
+
 	static FullName parseFullName(string);
 public:
 	bool operator==(const FullName&);
 };
-
-vector<tuple<string, string>> parseFirstNames(vector<vector<string>> collections);
