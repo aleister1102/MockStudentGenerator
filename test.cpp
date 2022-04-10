@@ -8,7 +8,6 @@
 
 int main()
 {
-#if 1
 	// Đọc students từ file (task 0)
 	File file;
 	Students students(file.readStudents(STUDENTS2));
@@ -29,33 +28,6 @@ int main()
 	// Tìm students có điểm lớn hơn trung bình (task 5)
 	cout << "----- Students have above average scorce -----\n";
 	students.findAboveAvg();
-#endif
 
-#if 0
-	// Viết các test unit như này,
-	// chẳng hạn viết test cho phương thức String::trim
-	string s = "    Nguyen   Van    A   ";
-	cout << String::trim(s) << endl;
-#endif
-
-#if 0
-	string s = "20120356 Le Minh Quan";
-	cout << String::searchRegex(s, ID) << endl;
-#endif
-
-#if 0
-	File file;
-	vector<vector<string>> firstNames = file.readCSV(FIRSTNAMES);
-
-	vector<tuple<string, string>> firstNamesTuples = parseFirstNames(firstNames);
-
-	for (size_t i = 0; i < firstNamesTuples.size(); i++)
-	{
-		string firstName;
-		string frequency;
-		tie(firstName, frequency) = firstNamesTuples[i];
-		cout << firstName << ": " << frequency << endl;
-	}
-#endif
 	return 0;
 }

@@ -48,3 +48,53 @@ Student: 7295 - Nguyen Dieu Phuc
     Email=ndphuc@gmail.com
     DOB=10/10/1969
     Address=50/23 Nam Chau, Binh Tri Dong A Ward, Binh Tan District, Ho Chi Minh city
+Student: 12532 - Nguyen Ba Xoai
+    GPA=2.41, Telephone=0565-604-743
+    Email=nbxoai@amazon.com
+    DOB=11/03/1939
+    Address=36/29 Le Thi Rieng, Ward 14, District 1, Ho Chi Minh city
+Student: 19414 - Tran Dieu Dang
+    GPA=5.52, Telephone=0863-002-365
+    Email=tddang@netflix.com
+    DOB=17/12/1933
+    Address=3/12 Than Nhan Trung, Thao Dien Ward, Binh Tan District, Ho Chi Minh city
+Student: 27058 - Nguyen Manh Khan
+    GPA=7.93, Telephone=0931-692-688
+    Email=nmkhan@gmail.com
+    DOB=27/03/1955
+    Address=14/11 Lo Tu, Co Giang Ward, District 2, Ho Chi Minh city
+Student: 7098 - Nguyen Manh Em
+    GPA=8.57, Telephone=0703-677-606
+    Email=nmem@facebook.com
+    DOB=09/06/1932
+    Address=7/29 Ma Lo, An Lac A Ward, District 1, Ho Chi Minh city
+Student: 18570 - Vu Dieu Hien
+    GPA=1.91, Telephone=0880-955-513
+    Email=vdhien@apple.com
+    DOB=19/11/2005
+    Address=3/10 Nguyen Hue, Cat Lai Ward, District 1, Ho Chi Minh city
+Student: 217 - Nguyen Van Don
+    GPA=2.28, Telephone=0706-254-339
+    Email=nvdon@outlook.com
+    DOB=20/04/1935
+    Address=26/28 Nam Chau, Binh Tri Dong A Ward, District 2, Ho Chi Minh city
+Student: 1753 - Nguyen Van Nhan
+    GPA=7.15, Telephone=0881-739-587
+    Email=nvnhan@facebook.com
+    DOB=31/03/1976
+    Address=13/21 Than Nhan Trung, An Khanh Ward, Binh Tan District, Ho Chi Minh city
+Student: 30843 - Nguyen Thi Qua
+    GPA=4.36, Telephone=0832-204-794
+    Email=ntqua@microsoft.com
+    DOB=03/06/1974
+    Address=50/35 Thanh My Loi, Binh Hung Hoa Ward, Binh Tan District, Ho Chi Minh city
+Student: 4624 - Do Ba Thoan
+    GPA=3.96, Telephone=0901-346-707
+    Email=dbthoan@github.com
+    DOB=21/08/1944
+    Address=1/17 Le Dinh Quan, Ben Nghe Ward, District 2, Ho Chi Minh city
+Student: 510 - Nguyen Manh Dieu
+    GPA=6.28, Telephone=0830-479-635
+    Email=nmdieu@github.com
+    DOB=21/10/1997
+    Address=7/21 Thao Dien, Ward 12, Binh Thanh District, Ho Chi Minh city
