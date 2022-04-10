@@ -9,17 +9,17 @@
  *
  * @return A vector of strings.
  */
-vector<string> String::split(string s, string del)
+vector<string> String::split(string s, string delimiter)
 {
 	vector<string> infos;
 
 	size_t start = 0;
-	size_t end = (int)s.find(del);
-	while (end != -1)
+	size_t end = (int)s.find(delimiter);
+	while (end != string::npos)
 	{
 		infos.push_back(s.substr(start, end - start));
-		start = end + del.size();
-		end = s.find(del, start);
+		start = end + delimiter.size();
+		end = s.find(delimiter, start);
 	}
 	infos.push_back(s.substr(start, end - start));
 

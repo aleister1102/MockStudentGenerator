@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <tuple>
 // Unicode
 #include <Windows.h>
 #include <io.h>
@@ -28,10 +29,10 @@ using namespace std;
 
 // Regex pattern
 #define WORDS "(?! )[A-z ]+"
-#define NUMBERS "[0-9]+"
+#define NUMBERS "-?[0-9]+"
 #define ID "[0-9]{1,8}"
 #define NAME " [A-z ]+"
-#define GPA "[0-9]+\\.*[0-9]{0,2}(?=,)"
+#define GPA "[0-9]+\\.?[0-9]{0,2}(?=,)"
 #define TEL "[0-9]{4}-[0-9]{3}-[0-9]{3}"
 #define EMAIL "[a-z]+@[a-z]+\\.com"
 #define DATE "[0-9]{2}/[0-9]{2}/[0-9]{4}"
@@ -40,3 +41,4 @@ using namespace std;
 #define WARD "([A-z]+ *)+(?=Ward)"
 #define DISTRICT "([A-z]+ *)+(?=District)"
 #define CITY "([A-z]+ *)+(?=city)"
+#define FLOAT "-?[0-9]+\\.{1}[0-9]+"

@@ -109,7 +109,7 @@ void Students::findAboveAvg()
 		}
 	}
 
-	vector<Student> resultList = students.getStudents();
+	auto resultList = students.getStudents();
 	for (size_t i = 0; i < resultList.size(); i++)
 	{
 		cout << resultList[i].getID() << " - "

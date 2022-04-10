@@ -36,7 +36,7 @@ bool Date::checkLeapYear()
 
 int Date::dateInMonth()
 {
-	int countDays = 0;
+	int days = 0;
 
 	switch (_month)
 	{
@@ -47,27 +47,27 @@ int Date::dateInMonth()
 	case 8:
 	case 10:
 	case 12:
-		countDays = 31;
+		days = 31;
 		break;
 	case 4:
 	case 6:
 	case 9:
 	case 11:
-		countDays = 30;
+		days = 30;
 		break;
 	case 2:
 		if (this->checkLeapYear())
 		{
-			countDays = 29;
+			days = 29;
 		}
 		else
 		{
-			countDays = 28;
+			days = 28;
 		}
 		break;
 	}
 
-	return countDays;
+	return days;
 }
 
 bool Date::isDate()
@@ -92,13 +92,13 @@ bool Date::isDate()
 
 Date Date::parseDate(string str)
 {
-	vector<string> date = String::split(str, "/");
+	auto date = String::split(str, "/");
 
 	Date result;
 
-	result.setDay(stoi(date[0]));
-	result.setMonth(stoi(date[1]));
-	result.setYear(stoi(date[2]));
+	result.setDay(Number::tryParseInt(date[0]));
+	result.setMonth(Number::tryParseInt(date[1]));
+	result.setYear(Number::tryParseInt(date[2]));
 
 	return result;
 }

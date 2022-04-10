@@ -4,6 +4,7 @@
 #include "include/Random.h"
 #include "include/Student.h"
 #include "include/lib.h"
+#include "include/Number.h"
 
 int main()
 {
@@ -24,7 +25,7 @@ int main()
 	file.writeStudents(STUDENTS2, students.getStudents());
 	// Tính điểm trung bình của students (task 4)
 	cout << "----- Average Score -----\n";
-	cout << students.averageScore() << endl;
+	cout << "\t" << students.averageScore() << "\t" << endl;
 	// Tìm students có điểm lớn hơn trung bình (task 5)
 	cout << "----- Students have above average scorce -----\n";
 	students.findAboveAvg();
@@ -42,5 +43,19 @@ int main()
 	cout << String::searchRegex(s, ID) << endl;
 #endif
 
+#if 0
+	File file;
+	vector<vector<string>> firstNames = file.readCSV(FIRSTNAMES);
+
+	vector<tuple<string, string>> firstNamesTuples = parseFirstNames(firstNames);
+
+	for (size_t i = 0; i < firstNamesTuples.size(); i++)
+	{
+		string firstName;
+		string frequency;
+		tie(firstName, frequency) = firstNamesTuples[i];
+		cout << firstName << ": " << frequency << endl;
+	}
+#endif
 	return 0;
 }

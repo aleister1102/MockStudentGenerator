@@ -22,31 +22,9 @@ string FullName::toString()
 	return builder.str();
 }
 
-/**
- * Given a vector of vectors of strings, parse the first string of each vector and return a vector of
- * strings
- *
- * @param collections A vector of vectors of strings. Each vector of strings is a collection of names.
- * @param frequencies A vector of floats that contains the frequencies of each name.
- *
- * @return The vector of names.
- */
-vector<string> FullName::parseFirstNames(vector<vector<string>> collections, vector<float>& frequencies)
-{
-	vector<string> names;
-
-	for (size_t i = 0; i < collections.size(); i++)
-	{
-		names.push_back(collections[i][0]);
-		frequencies.push_back(stof(collections[i][1]));
-	}
-
-	return names;
-}
-
 FullName FullName::parseFullName(string str)
 {
-	vector<string> names = String::split(str);
+	auto names = String::split(str);
 
 	FullName result;
 

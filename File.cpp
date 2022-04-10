@@ -43,7 +43,7 @@ vector<vector<string>> File::readCSV(string fileName)
 		getline(_file, line);
 		if (line == "")
 			continue;
-		vector<string> parsedString = String::split(line, ",");
+		auto parsedString = String::split(line, ",");
 		parsedStrings.push_back(parsedString);
 	}
 
@@ -80,6 +80,7 @@ vector<string> File::readTXT(string fileName)
 vector<string> File::readStudentStrings(fstream& file)
 {
 	vector<string> studentStrings;
+
 	for (int i = 0; i < 5; i++)
 	{
 		string line;
@@ -95,9 +96,9 @@ vector<string> File::readStudentStrings(fstream& file)
 /**
  * It reads a file, parses the file into a vector of strings, converts the vector of strings into a
  * vector of students, and returns the vector of students
- * 
+ *
  * @param fileName The name of the file to read from.
- * 
+ *
  * @return A vector of students.
  */
 vector<Student> File::readStudents(string fileName)
@@ -107,10 +108,10 @@ vector<Student> File::readStudents(string fileName)
 
 	while (!_file.eof())
 	{
-		vector<string> studentStrings = readStudentStrings(_file);
+		auto studentStrings = readStudentStrings(_file);
 		if (studentStrings.size() == 0)
 			break;
-		vector<string> attributes = String::parseStudentStrings(studentStrings);
+		auto attributes = String::parseStudentStrings(studentStrings);
 		StringToStudentConverter converter;
 		Student student = converter.convert(attributes);
 		students.push_back(student);
@@ -122,7 +123,7 @@ vector<Student> File::readStudents(string fileName)
 
 /**
  * It takes a vector of students and writes them to a file
- * 
+ *
  * @param fileName The name of the file to be written to.
  * @param students
  */
@@ -133,7 +134,7 @@ void File::writeStudents(string fileName, vector<Student> students)
 
 	for (size_t i = 0; i < students.size(); i++)
 	{
-		vector<string> studentStrings = converter.convertBack(students[i]);
+		auto studentStrings = converter.convertBack(students[i]);
 		for (int i = 0; i < 5; i++)
 		{
 			_file << studentStrings[i];

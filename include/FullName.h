@@ -1,6 +1,7 @@
 #pragma once
 #include "lib.h"
 #include "String.h"
+#include "Number.h"
 
 class FullName;
 
@@ -23,7 +24,7 @@ public:
 
 public:
 	string toString();
-	static vector<string> parseFirstNames(vector<vector<string>>, vector<float>&);
+
 	static FullName parseFullName(string);
 public:
 	bool operator==(const FullName&);

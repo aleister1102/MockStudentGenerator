@@ -2,18 +2,18 @@
 
 /**
  * It takes a vector of strings, and returns a Student object
- * 
+ *
  * @param attributes a vector of strings that contains the attributes of a student
- * 
+ *
  * @return A Student object.
  */
 Student StringToStudentConverter::convert(vector<string> attributes)
 {
 	Student result;
 
-	result.setID(stoi(attributes[0]));
+	result.setID(Number::tryParseInt(attributes[0]));
 	result.setName(FullName::parseFullName(attributes[1]));
-	result.setGPA(stof(attributes[2]));
+	result.setGPA(Number::tryParseFloat(attributes[2]));
 	result.setTelephone(attributes[3]);
 	result.setEmail(attributes[4]);
 	result.setDOB(Date::parseDate(attributes[5]));
@@ -24,9 +24,9 @@ Student StringToStudentConverter::convert(vector<string> attributes)
 
 /**
  * It converts a Student object into a vector of strings
- * 
+ *
  * @param student The student object to be converted to a vector of strings.
- * 
+ *
  * @return A vector of strings.
  */
 vector<string> StringToStudentConverter::convertBack(Student student)
