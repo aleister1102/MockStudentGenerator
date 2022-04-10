@@ -1,6 +1,7 @@
 #pragma once
 #include "lib.h"
 #include "Student.h"
+#include "Number.h"
 
 class StringToStudentConverter;
 

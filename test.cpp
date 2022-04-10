@@ -8,7 +8,7 @@
 
 int main()
 {
-#if 0
+#if 1
 	// Đọc students từ file (task 0)
 	File file;
 	Students students(file.readStudents(STUDENTS2));
@@ -56,18 +56,6 @@ int main()
 		tie(firstName, frequency) = firstNamesTuples[i];
 		cout << firstName << ": " << frequency << endl;
 	}
-#endif
-
-#if 1
-	string str = "12121.a1212";
-	bool successful = false;
-	int errorCode = 0;
-	string message = "";
-	float number = 0;
-
-	tie(successful, errorCode, message, number) = Number::parseFloat(str);
-	cout << number << endl;
-
 #endif
 	return 0;
 }

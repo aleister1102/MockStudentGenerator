@@ -148,17 +148,3 @@ vector<string> String::parseStudentStrings(vector<string> lines)
 
 	return attributes;
 }
-
-int String::parseInt(string str)
-{
-	int number = 0;
-
-	try {
-		number = stoi(str);
-	}
-	catch (exception e)
-	{
-		cout << e.what();
-	}
-	return number;
-}

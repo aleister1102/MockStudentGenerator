@@ -1,88 +1,92 @@
 ﻿#include "include/Number.h"
 
-/// <summary>
-/// Error code:
-/// 1. Invalid format
-/// 2. Empty string
-/// </summary>
-/// <param name="str"></param>
-/// <returns></returns>
-tuple<bool, int, string, int> Number::parseInt(string str)
+tuple<ReturnFlags, int> Number::parseInt(string str)
 {
-	bool successful = true;
-	int errorCode = 0;
-	string message = "";
+	ReturnFlags flags;
 	int number = 0;
 
 	if (str.size() == 0) {
-		successful = false;
-		errorCode = 2;
-		message = "Empty string";
+		flags.successful = false;
+		flags.errorCode = 2;
+		flags.message = "Empty string";
 	}
 	else
 	{
-		try {
-			number = stoi(str);
-		}
-		catch (exception ex)
+		regex pattern(NUMBERS);
+		smatch match;
+		bool isMatched = regex_search(str, match, pattern);
+		if (!isMatched)
 		{
-			successful = false;
-			errorCode = 1;
-			message = ex.what();
+			flags.successful = false;
+			flags.errorCode = 1;
+			flags.message = "Invalid int number";
+		}
+		else
+		{
+			number = stoi(match[0]);
 		}
 	}
 
-	auto result = make_tuple(
-		successful, errorCode, message, number
-	);
+	auto result = make_tuple(flags, number);
 	return result;
 }
 
-/// <summary>
-/// Error code:
-/// 1. Invalid format
-/// 2. Empty string
-/// 3. Another exception
-/// </summary>
-/// <param name="str"></param>
-/// <returns></returns>
-tuple<bool, int, string, float> Number::parseFloat(string str)
+tuple<ReturnFlags, float> Number::parseFloat(string str)
 {
-	bool successful = true;
-	int errorCode = 0;
-	string message = "";
+	ReturnFlags flags;
 	float number = 0;
 
 	if (str.size() == 0)
 	{
-		successful = false;
-		errorCode = 2;
-		message = "Empty string";
+		flags.successful = false;
+		flags.errorCode = 2;
+		flags.message = "Empty string";
 	}
-
-	regex pattern("-?[0-9]+\\.?[0-9]+(?![A-z])");
-	smatch match;
-	bool isMatched = regex_search(str, match, pattern);
-	if (!isMatched)
+	else
 	{
-		successful = false;
-		errorCode = 1;
-		message = "Invalid float number";
+		regex pattern("-?[0-9]+\\.{1}[0-9]+");
+		smatch match;
+		bool isMatched = regex_search(str, match, pattern);
+		if (!isMatched)
+		{
+			flags.successful = false;
+			flags.errorCode = 1;
+			flags.message = "Invalid float number";
+		}
+		else
+		{
+			number = stof(str);
+		}
 	}
 
-	try {
-		number = stof(str);
-	}
-	catch (exception ex)
-	{
-		successful = false;
-		errorCode = 1;
-		message = ex.what();
-	}
-	
-
-	auto result = make_tuple(
-		successful, errorCode, message, number
-	);
+	auto result = make_tuple(flags, number);
 	return result;
+}
+
+int Number::tryParseInt(string str)
+{
+	ReturnFlags flags;
+	int number = 0;
+
+	tie(flags, number) = parseInt(str);
+	if (!flags.successful)
+	{
+		cout << "Error code: " << flags.errorCode << endl;
+		cout << "Message: " << flags.message << endl;
+	}
+	return number;
+}
+
+float Number::tryParseFloat(string str)
+{
+	ReturnFlags flags;
+	float number = 0;
+
+	tie(flags, number) = parseInt(str);
+	if (!flags.successful)
+	{
+		cout << "Error code: " << flags.errorCode << endl;
+		cout << "Message: " << flags.message << endl;
+	}
+	return number;
 }

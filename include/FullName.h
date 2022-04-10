@@ -1,6 +1,7 @@
 #pragma once
 #include "lib.h"
 #include "String.h"
+#include "Number.h"
 
 class FullName;
 

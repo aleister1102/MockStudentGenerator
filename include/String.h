@@ -11,5 +11,4 @@ public:
 	static string searchRegex(string, string);
 	static string toLowerCase(string);
 	static vector<string> parseStudentStrings(vector<string>);
-	static int parseInt(string);
 };

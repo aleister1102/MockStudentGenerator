@@ -96,9 +96,9 @@ Date Date::parseDate(string str)
 
 	Date result;
 
-	result.setDay(stoi(date[0]));
-	result.setMonth(stoi(date[1]));
-	result.setYear(stoi(date[2]));
+	result.setDay(Number::tryParseInt(date[0]));
+	result.setMonth(Number::tryParseInt(date[1]));
+	result.setYear(Number::tryParseInt(date[2]));
 
 	return result;
 }
