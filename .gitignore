@@ -2,9 +2,11 @@
 .vscode/
 x64/
 build/
-patterns.txt
+doc/latex/
 
 *.sln
 *.vcxproj
 *.filters
 *.user
+patterns.txt
+Doxyfile
