@@ -4,7 +4,7 @@
 #include "include/File.h"
 
 /**
- * @brief Khởi tạo hạt giống thời gian
+ * @brief Init time seed
  */
 Random::Random()
 {
@@ -12,9 +12,9 @@ Random::Random()
 }
 
 /**
- * @brief Tạo ra một số ngẫu nhiên
+ * @brief Create a integer random number (from 0 to 32767)
  *
- * @return Số vừa tạo
+ * @return Integer number
  */
 int Random::next()
 {
@@ -23,11 +23,11 @@ int Random::next()
 }
 
 /**
- * @brief Tạo ra một số ngẫu nhiên trong đoạn [min, max]
+ * @brief Create a ramdom integer in [min, max]
  *
- * @param min cận dưới
- * @param max cận trên
- * @return Số vừa tạo
+ * @param min upper boundary
+ * @param max lower boundary
+ * @return Integer number
  */
 int Random::next(int min, int max)
 {
@@ -36,10 +36,10 @@ int Random::next(int min, int max)
 }
 
 /**
- * @brief Tạo một số ngẫu nhiên trong nửa khoảng [0, ceiling)
+ * @brief Creata a random integer in [0, ceiling)
  *
- * @param ceiling khoảng tạo số ngẫu nhiên mong muốn
- * @return Số vừa tạo
+ * @param ceiling upper boundary, but not included
+ * @return Integer number
  */
 int Random::next(int ceiling)
 {

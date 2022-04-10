@@ -48,8 +48,14 @@ string Address::toString()
 	return result;
 }
 
-// addressDetails thực chất là vector gồm các thuộc tính của Student
-// index từ 6 - 10 là thuộc về Address
+
+/**
+ * It takes a vector of strings, and returns an Address object
+ * 
+ * @param addressDetails a vector of strings containing the address details. 
+ * Only indexes from 6 - 10 are used for address
+ * @return An object of type Address.
+ */
 Address Address::parseAddress(vector<string> addressDetails)
 {
 	Address result;

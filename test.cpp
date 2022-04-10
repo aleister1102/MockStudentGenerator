@@ -8,24 +8,25 @@
 
 int main()
 {
-	// Đọc students từ file
+	//Read all students saved in the file "students.txt" back into a vector of Student
 	File file;
 	Students students(file.readStudents(STUDENTS));
 	cout << students.toString() << endl;
-	// Random số n và students
+	// Generate randomly a number n in the range of [5, 10]
+	// and generate randomly n Students and add to the previous vector
 	RandomStudents studentsRng;
 	Students randomStudents(studentsRng.next());
 	cout << "----- Random Students -----\n";
 	cout << randomStudents.toString() << endl;
-	// Append vào students và ghi đè vào file
+	// Overwrite and save and the students in the current vector back to the file "students.txt"
 	cout << "----- Students after appending -----\n";
 	students.append(randomStudents);
 	cout << students.toString() << endl;
 	file.writeStudents(STUDENTS, students.getStudents());
-	// Tính điểm trung bình của students
+	// Print out the average GPA of all students
 	cout << "----- Average Score -----\n";
 	cout << "\t" << students.averageScore() << "\t" << endl;
-	// Tìm students có điểm lớn hơn trung bình
+	// Print out all the students that have a GPA greater than the average GPA
 	cout << "----- Students have above average scorce -----\n";
 	students.findAboveAvg();
 	system("pause");

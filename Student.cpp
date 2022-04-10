@@ -51,21 +51,11 @@ Students::Students(vector<Student> students)
 	_students = students;
 }
 
-/**
- * The function `add` takes a `Student` object as an argument and adds it to the `_students` vector
- *
- * @param student The student to add to the list.
- */
 void Students::add(Student student)
 {
 	_students.push_back(student);
 }
 
-/**
- * This function takes a vector of students and adds each student to the students vector
- *
- * @param students A vector of Student objects.
- */
 void Students::add(vector<Student> students)
 {
 	for (size_t i = 0; i < students.size(); i++)
@@ -74,12 +64,6 @@ void Students::add(vector<Student> students)
 	}
 }
 
-/**
- * Appends the students in the given Students object to the end of the list of students in this
- * Students object
- *
- * @param students The students to add to the list.
- */
 void Students::append(Students students)
 {
 	add(students.getStudents());
