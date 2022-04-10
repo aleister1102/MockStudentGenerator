@@ -42,7 +42,4 @@ VScode, Visual Studio, Git/Github.
 - 20120386: Lê Phước Toàn
 
 # Tham khảo
-
-- Choose first name from this [list](https://vi.wikipedia.org/wiki/H%E1%BB%8D_ng%C6%B0%E1%BB%9Di_Vi%E1%BB%87t_Nam).
-- Choose middle name from this [list](http://www.erct.com/4-ChiaSe/SuuTam/Tinh_danh-TEN_DEM.htm).
-- Choose last name from this [list](https://xltiengviet.fandom.com/wiki/T%C3%AAn_ng%C6%B0%E1%BB%9Di_Vi%E1%BB%87t_Nam).
+- Slide của HCMUS
