@@ -17,8 +17,7 @@
 using namespace std;
 
 // Files path
-#define STUDENTS "data/students.csv"
-#define STUDENTS2 "data/students.txt"
+#define STUDENTS "data/students.txt"
 #define FIRSTNAMES "data/firstNames.csv"
 #define MIDDLENAMES "data/middleNames.txt"
 #define LASTNAMES "data/lastNames.txt"
@@ -30,7 +29,7 @@ using namespace std;
 // Regex pattern
 #define WORDS "(?! )[A-z ]+"
 #define NUMBERS "-?[0-9]+"
-#define FLOAT "-?[0-9]+\\.{1}[0-9]+"
+#define FLOAT "-?[0-9]+\\.?[0-9]+"
 #define ID "[0-9]{1,8}"
 #define NAME " [A-z ]+"
 #define GPA "[0-9]+\\.?[0-9]{0,2}(?=,)"

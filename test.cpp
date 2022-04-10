@@ -10,7 +10,7 @@ int main()
 {
 	// Đọc students từ file
 	File file;
-	Students students(file.readStudents(STUDENTS2));
+	Students students(file.readStudents(STUDENTS));
 	cout << students.toString() << endl;
 	// Random số n và students
 	RandomStudents studentsRng;
@@ -21,7 +21,7 @@ int main()
 	cout << "----- Students after appending -----\n";
 	students.append(randomStudents);
 	cout << students.toString() << endl;
-	file.writeStudents(STUDENTS2, students.getStudents());
+	file.writeStudents(STUDENTS, students.getStudents());
 	// Tính điểm trung bình của students
 	cout << "----- Average Score -----\n";
 	cout << "\t" << students.averageScore() << "\t" << endl;

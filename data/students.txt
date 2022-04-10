@@ -1,100 +1,100 @@
-Student: 32417 - Nguyen Manh Khuu
-    GPA=1.82, Telephone=0563-845-853
-    Email=nmkhuu@facebook.com
-    DOB=10/10/2019
-    Address=23/37 Le Thi Rieng, Ward 15, Binh Tan District, Ho Chi Minh city
-Student: 1067 - Pham Dieu Chuc
-    GPA=8.64, Telephone=0965-754-519
-    Email=pdchuc@netflix.com
-    DOB=04/11/1990
-    Address=25/35 Nghia Hoa, Ong Lanh Ward, Binh Tan District, Ho Chi Minh city
-Student: 27223 - Nguyen Thi Co
-    GPA=0.75, Telephone=0963-537-714
-    Email=ntco@amazon.com
-    DOB=17/08/1966
-    Address=14/14 Lo Te, Ward 14, District 2, Ho Chi Minh city
-Student: 14335 - Do Dieu Diep
-    GPA=6.43, Telephone=0563-491-503
-    Email=dddiep@apple.com
-    DOB=20/02/1985
-    Address=36/24 Ly Thanh Tong, Thao Dien Ward, Binh Tan District, Ho Chi Minh city
-Student: 8118 - Nguyen Manh Khao
-    GPA=7.07, Telephone=0929-159-304
-    Email=nmkhao@outlook.com
-    DOB=14/01/1960
-    Address=27/38 Thanh My Loi, Thanh My Loi Ward, District 1, Ho Chi Minh city
-Student: 21146 - Bui Van Cuu
-    GPA=2.93, Telephone=0918-283-801
-    Email=bvcuu@apple.com
-    DOB=01/02/1921
-    Address=17/27 Tan Lap, Ward 7, Tan Binh District, Ho Chi Minh city
-Student: 15096 - Nguyen Thi Soan
-    GPA=0.47, Telephone=0589-296-720
-    Email=ntsoan@amazon.com
-    DOB=17/01/2012
-    Address=1/27 Le Thi Rieng, Ward 6, District 1, Ho Chi Minh city
-Student: 28151 - Nguyen Van Diem
-    GPA=4.35, Telephone=0862-017-634
-    Email=nvdiem@grab.com
-    DOB=12/06/2009
-    Address=32/19 Lo Tu, Ward 14, District 2, Ho Chi Minh city
-Student: 9275 - Nguyen Manh Ben
-    GPA=0.69, Telephone=0587-072-065
-    Email=nmben@netflix.com
-    DOB=20/04/1965
-    Address=34/14 Nam Chau, Binh Hung Hoa Ward, Binh Tan District, Ho Chi Minh city
-Student: 7295 - Nguyen Dieu Phuc
-    GPA=2.04, Telephone=0960-551-392
-    Email=ndphuc@gmail.com
-    DOB=10/10/1969
-    Address=50/23 Nam Chau, Binh Tri Dong A Ward, Binh Tan District, Ho Chi Minh city
-Student: 12532 - Nguyen Ba Xoai
-    GPA=2.41, Telephone=0565-604-743
-    Email=nbxoai@amazon.com
-    DOB=11/03/1939
-    Address=36/29 Le Thi Rieng, Ward 14, District 1, Ho Chi Minh city
-Student: 19414 - Tran Dieu Dang
-    GPA=5.52, Telephone=0863-002-365
-    Email=tddang@netflix.com
-    DOB=17/12/1933
-    Address=3/12 Than Nhan Trung, Thao Dien Ward, Binh Tan District, Ho Chi Minh city
-Student: 27058 - Nguyen Manh Khan
-    GPA=7.93, Telephone=0931-692-688
-    Email=nmkhan@gmail.com
-    DOB=27/03/1955
-    Address=14/11 Lo Tu, Co Giang Ward, District 2, Ho Chi Minh city
-Student: 7098 - Nguyen Manh Em
-    GPA=8.57, Telephone=0703-677-606
-    Email=nmem@facebook.com
-    DOB=09/06/1932
-    Address=7/29 Ma Lo, An Lac A Ward, District 1, Ho Chi Minh city
-Student: 18570 - Vu Dieu Hien
-    GPA=1.91, Telephone=0880-955-513
-    Email=vdhien@apple.com
-    DOB=19/11/2005
-    Address=3/10 Nguyen Hue, Cat Lai Ward, District 1, Ho Chi Minh city
-Student: 217 - Nguyen Van Don
-    GPA=2.28, Telephone=0706-254-339
-    Email=nvdon@outlook.com
-    DOB=20/04/1935
-    Address=26/28 Nam Chau, Binh Tri Dong A Ward, District 2, Ho Chi Minh city
-Student: 1753 - Nguyen Van Nhan
-    GPA=7.15, Telephone=0881-739-587
-    Email=nvnhan@facebook.com
-    DOB=31/03/1976
-    Address=13/21 Than Nhan Trung, An Khanh Ward, Binh Tan District, Ho Chi Minh city
-Student: 30843 - Nguyen Thi Qua
-    GPA=4.36, Telephone=0832-204-794
-    Email=ntqua@microsoft.com
-    DOB=03/06/1974
-    Address=50/35 Thanh My Loi, Binh Hung Hoa Ward, Binh Tan District, Ho Chi Minh city
-Student: 4624 - Do Ba Thoan
-    GPA=3.96, Telephone=0901-346-707
-    Email=dbthoan@github.com
-    DOB=21/08/1944
-    Address=1/17 Le Dinh Quan, Ben Nghe Ward, District 2, Ho Chi Minh city
-Student: 510 - Nguyen Manh Dieu
-    GPA=6.28, Telephone=0830-479-635
-    Email=nmdieu@github.com
-    DOB=21/10/1997
-    Address=7/21 Thao Dien, Ward 12, Binh Thanh District, Ho Chi Minh city
+Student: 25984 - Bui Van Nhu
+    GPA=7.13, Telephone=0988-765-954
+    Email=bvnhu@facebook.com
+    DOB=30/07/1958
+    Address=9/18 Giao Hoa, Tan Dinh Ward, District 1, Ho Chi Minh city
+Student: 6759 - Phan Dieu Duong
+    GPA=7.95, Telephone=0706-103-248
+    Email=pdduong@amazon.com
+    DOB=22/08/1914
+    Address=12/27 Thao Dien, Ward 11, Binh Thanh District, Ho Chi Minh city
+Student: 21606 - Ho Van An
+    GPA=3.07, Telephone=0588-648-830
+    Email=hvan@netflix.com
+    DOB=12/12/1979
+    Address=29/15 Bach Dang, Thu Thiem Ward, Binh Thanh District, Ho Chi Minh city
+Student: 7544 - Le Van Nghe
+    GPA=3.05, Telephone=0582-508-930
+    Email=lvnghe@grab.com
+    DOB=28/06/2004
+    Address=44/33 Ly Chieu Hoang, Tan Dinh Ward, Binh Tan District, Ho Chi Minh city
+Student: 14690 - Nguyen Dieu Phuong
+    GPA=8.03, Telephone=0582-763-501
+    Email=ndphuong@gmail.com
+    DOB=31/07/1955
+    Address=12/32 Ly Thai To, Ward 6, District 2, Ho Chi Minh city
+Student: 1941 - Ngo Dieu Phan
+    GPA=5.00, Telephone=0944-261-801
+    Email=ndphan@gmail.com
+    DOB=30/05/1923
+    Address=3/13 Nghia Hoa, Ward 1, Tan Binh District, Ho Chi Minh city
+Student: 13213 - Nguyen Thi Doi
+    GPA=8.38, Telephone=0907-450-570
+    Email=ntdoi@microsoft.com
+    DOB=26/12/1950
+    Address=49/24 Dien Bien Phu, Ong Lanh Ward, Binh Tan District, Ho Chi Minh city
+Student: 17145 - Tran Manh Bang
+    GPA=9.31, Telephone=0568-378-754
+    Email=tmbang@apple.com
+    DOB=22/08/1905
+    Address=9/18 Ly Chieu Hoang, Binh Khanh Ward, Binh Tan District, Ho Chi Minh city
+Student: 12915 - Nguyen Thi Luan
+    GPA=3.06, Telephone=0902-419-759
+    Email=ntluan@grab.com
+    DOB=24/05/1979
+    Address=49/20 Tan Ky Tan Quy, Thao Dien Ward, District 1, Ho Chi Minh city
+Student: 8566 - Nguyen Ba Kha
+    GPA=0.31, Telephone=0941-514-879
+    Email=nbkha@apple.com
+    DOB=04/02/1930
+    Address=25/22 Le Van Huu, Ward 8, Binh Thanh District, Ho Chi Minh city
+Student: 7244 - Pham Manh Hieu
+    GPA=8.71, Telephone=0930-906-108
+    Email=pmhieu@github.com
+    DOB=10/12/1989
+    Address=1/40 Thao Dien, Binh Tri Dong A Ward, Binh Tan District, Ho Chi Minh city
+Student: 30794 - Nguyen Manh Tram
+    GPA=5.00, Telephone=0563-188-136
+    Email=nmtram@apple.com
+    DOB=11/04/1908
+    Address=22/22 Binh Loi, Ward 8, District 2, Ho Chi Minh city
+Student: 234 - Nguyen Dieu Bo
+    GPA=7.06, Telephone=0928-608-541
+    Email=ndbo@microsoft.com
+    DOB=16/10/1962
+    Address=7/19 Nguyen Hue, Binh An Ward, Binh Tan District, Ho Chi Minh city
+Student: 7940 - Le Van Chinh
+    GPA=9.12, Telephone=0590-328-526
+    Email=lvchinh@microsoft.com
+    DOB=25/08/1980
+    Address=49/40 Nam Chau, Cat Lai Ward, Tan Binh District, Ho Chi Minh city
+Student: 1870 - Nguyen Thi Lich
+    GPA=9.51, Telephone=0889-594-346
+    Email=ntlich@microsoft.com
+    DOB=23/01/1959
+    Address=49/10 Ly Thai To, Co Giang Ward, District 2, Ho Chi Minh city
+Student: 3860 - Bui Van Ba
+    GPA=4.57, Telephone=0945-820-162
+    Email=bvba@github.com
+    DOB=06/11/1939
+    Address=23/28 Nguyen Hue, Ward 19, Binh Tan District, Ho Chi Minh city
+Student: 20902 - Vu Ba Ban
+    GPA=2.78, Telephone=0960-134-888
+    Email=vbban@microsoft.com
+    DOB=18/06/1930
+    Address=21/33 Bach Dang, Binh Tri Dong Ward, District 1, Ho Chi Minh city
+Student: 20269 - Nguyen Ba Qua
+    GPA=2.16, Telephone=0941-121-260
+    Email=nbqua@apple.com
+    DOB=19/10/1924
+    Address=31/11 Than Nhan Trung, Thanh My Loi Ward, Tan Binh District, Ho Chi Minh city
+Student: 13446 - Pham Van An
+    GPA=3.26, Telephone=0565-622-505
+    Email=pvan@amazon.com
+    DOB=28/12/1984
+    Address=47/11 Hoang Hoa Tham, Ward 19, Binh Thanh District, Ho Chi Minh city
+Student: 32619 - Nguyen Ba Khan
+    GPA=9.12, Telephone=0560-476-506
+    Email=nbkhan@github.com
+    DOB=19/10/2005
+    Address=1/40 Le Thi Rieng, Ward 5, District 1, Ho Chi Minh city

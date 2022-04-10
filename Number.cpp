@@ -59,7 +59,7 @@ tuple<ReturnFlags, float> Number::parseFloat(string str)
 	}
 	else
 	{
-		regex pattern("-?[0-9]+\\.{1}[0-9]+");
+		regex pattern(FLOAT);
 		smatch match;
 		bool isMatched = regex_search(str, match, pattern);
 		if (!isMatched)
