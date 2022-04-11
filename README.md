@@ -1,10 +1,6 @@
 # Mock Students Generator Project
 Đồ án ứng dụng việc tạo các lớp đơn giản và sinh số ngẫu nhiên.
 
-# Thời gian thực hiện
-01/04/2022 - 10/04/2022 (Hoàn thành yêu cầu đề ra)
-11/04/2022 - ??/??/2022 (Cập nhật - tối ưu, nếu có)
-
 # Chi tiết đồ án
 Chương trình chạy theo luồng như sau:
 - Đọc tất cả các học sinh từ file "students.txt" vào vector (tạm gọi là S).
@@ -35,7 +31,7 @@ Dữ liệu lấy từ các nguồn có sẵn, có ghi trong slide môn học.
 
 ## Ngôn ngữ sử dụng: C/C++.
 ## Công cụ hỗ trợ: 
-VScode, Visual Studio, Git/Github.
+VScode, Visual Studio, Git/Github, Doxygen.
 
 # Về chúng tôi
 - 20120356: Lê Minh Quân
