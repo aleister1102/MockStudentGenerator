@@ -1,0 +1,10 @@
+microsoft.com
+apple.com
+outlook.com
+yahoo.com
+grab.com
+amazon.com
+facebook.com
+netflix.com
+github.com
+gmail.com
