@@ -1,4 +1,4 @@
-# Mock Students Generator Project
+# Mock Student Generator Project
 Đồ án ứng dụng việc tạo các lớp đơn giản và sinh số ngẫu nhiên.
 
 # Chi tiết đồ án
